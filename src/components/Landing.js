@@ -1,7 +1,9 @@
 import React from 'react';
+import restaurants from '../sample-restaurants';
 
 class Landing extends React.Component {
     render() {
+
         return (
             <div className='rest'>
                 <div className='rest__select-top select-top'>
@@ -14,9 +16,9 @@ class Landing extends React.Component {
 
                 <div className='rest__select-bottom select-bottom'>
                     <ul>
-                        <li>restaurant 1</li>
-                        <li>restaurant 2</li>
-                        <li>restaurant 3</li>
+                        {restaurants.map((restaurant) => {
+                            return <li key={restaurant.id}>{restaurant.title}</li>
+                        })}
                     </ul>
                 </div>
 
