@@ -1,0 +1,171 @@
+@import './normalize.css';
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#root{
+    width: 100%;
+    height: auto;
+}
+/* main page start*/
+.select-top{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.select-top__header{
+    font-family: 'Londrina Outline', cursive;
+    text-transform: uppercase;
+    font-size: 32px;
+    padding: 20px;
+}
+.picker{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    
+}
+.picker__up,
+.picker__down{
+    width: 36px;
+    height: 25px;
+    position: relative;
+    border: none;
+    background-color: inherit;
+}
+.picker__up:hover,
+.picker__down:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+.picker__up:active,
+.picker__down:active{
+    transform: translateY(1px);
+}
+.picker__up{
+    margin-bottom: 5px;
+}
+.arrow_up,
+.arrow_down{
+    position: absolute;
+    
+    width: 10px;
+    height: 10px;
+    content: '';
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 5px;
+}
+.arrow_up{
+    top: 8px;
+    left: 8px;
+    transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.arrow_down{
+    bottom: 8px;
+    left: 8px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.rest{
+    position: relative;
+    width: 400px;
+    height: auto;
+    margin: 35vh auto auto;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.28); 
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.28);
+}
+
+
+.rest__select-bottom{
+    /* display: none; */
+    position: absolute;
+    top: 72px;
+    left: 23px;
+}
+.select-bottom{
+    width: 300px;
+    height: auto;
+    background-color: white;
+    border: 2px solid black;
+}
+.select-bottom ul {
+    list-style: none; /* Remove default bullets */
+    padding: 10px;
+    margin: 0;
+  }
+.select-bottom ul li{
+    padding: 5px;
+}
+.select-bottom ul li::before {
+  background-color: red; 
+  display: inline-block; 
+  width: 6px;
+  height: 6px;
+  content: '';
+  margin: 2px 10px 2px 2px;
+}
+.select-bottom ul li:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+.select-bottom ul li:active,
+.select-bottom ul li:active{
+    transform: translateY(1px);
+}
+
+
+.rest__select-button{
+    /* display: none; */
+    margin: 0 0 20px 20px;
+}
+/* select button start */
+.select-button{
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    border: none;
+    color: white;
+    background-color: red;
+    text-align: center;
+    text-transform: uppercase;
+}
+.select-button span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    opacity: 0;
+    color: white;
+    transition: 0.35s ease;
+    text-transform: uppercase;
+}
+.select-button:before {
+    content: "";
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: black;
+    transition: 0.5s ease;
+}
+.select-button:hover:before {
+    width: 100%;
+}
+.select-button:hover span {
+    opacity: 1;
+}
+/* select button end */        
+    
+
+/* main page end*/

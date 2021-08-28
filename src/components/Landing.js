@@ -7,10 +7,10 @@ class Landing extends React.Component {
         return (
             <div className='rest'>
                 <div className='rest__select-top select-top'>
-                    <div className='select-top__header'>Выберите ресторан</div>
+                    <div className='select-top__header'>Select restaurant</div>
                     <div className='select-top__picker picker'>
-                        <div className='picker__up'></div>
-                        <div className='picker__down'></div>
+                        <button className='picker__up'><i class="arrow_up"></i></button>
+                        <button className='picker__down'><i class="arrow_down"></i></button>
                     </div>
                 </div>
 
@@ -22,7 +22,10 @@ class Landing extends React.Component {
                     </ul>
                 </div>
 
-                <button className='rest__select-button'>Перейти в ресторан</button>
+                <button className='rest__select-button select-button'>
+                    visit the restaurant
+                    <span>visit the restaurant</span>
+                </button>
 
             </div>
 
