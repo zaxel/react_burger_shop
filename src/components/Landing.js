@@ -2,30 +2,51 @@ import React from 'react';
 import restaurants from '../sample-restaurants';
 
 class Landing extends React.Component {
+    state = {
+        display: false,
+        title: '',
+        url: '',
+    }
+
+    displayList = () => {
+        const {display} = this.state;
+        this.setState({display: !display})
+    }
+    getTitle = (restaurant) => {
+        const {title, url} = restaurant;
+        this.setState({
+            title, url, display: false
+        })
+    }
+    visitRestaurant = () => {
+        console.log('visited')
+    }
+
     render() {
 
         return (
             <div className='rest'>
                 <div className='rest__select-top select-top'>
-                    <div className='select-top__header'>Select restaurant</div>
+                        
+                        <div onClick={this.displayList} className='select-top__header'>{this.state.title ? this.state.title : 'Select restaurant'}</div>
                     <div className='select-top__picker picker'>
-                        <button className='picker__up'><i class="arrow_up"></i></button>
-                        <button className='picker__down'><i class="arrow_down"></i></button>
+                        <div className='picker__up'><i className="arrow_up"></i></div>
+                        <div className='picker__down'><i className="arrow_down"></i></div>
                     </div>
                 </div>
 
-                <div className='rest__select-bottom select-bottom'>
+                {this.state.display ? <div className='rest__select-bottom select-bottom'>
                     <ul>
                         {restaurants.map((restaurant) => {
-                            return <li key={restaurant.id}>{restaurant.title}</li>
+                            return <li onClick={() => this.getTitle(restaurant)} key={restaurant.id}>{restaurant.title}</li>
                         })}
                     </ul>
-                </div>
+                </div> : null}
 
-                <button className='rest__select-button select-button'>
+                {!this.state.display && this.state.title ? <button onClick={()=>this.visitRestaurant()} className='rest__select-button select-button'>
                     visit the restaurant
                     <span>visit the restaurant</span>
-                </button>
+                </button> : null}
 
             </div>
 

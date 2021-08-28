@@ -17,8 +17,11 @@
 .select-top__header{
     font-family: 'Londrina Outline', cursive;
     text-transform: uppercase;
-    font-size: 32px;
+    font-size: 28px;
     padding: 20px;
+}
+.select-top__header:hover{
+    cursor: pointer;
 }
 .picker{
     display: flex;
@@ -30,20 +33,11 @@
 }
 .picker__up,
 .picker__down{
-    width: 36px;
-    height: 25px;
+    width: 25px;
+    height: 20px;
     position: relative;
     border: none;
     background-color: inherit;
-}
-.picker__up:hover,
-.picker__down:hover{
-    background-color: lightgrey;
-    cursor: pointer;
-}
-.picker__up:active,
-.picker__down:active{
-    transform: translateY(1px);
 }
 .picker__up{
     margin-bottom: 5px;
@@ -52,8 +46,8 @@
 .arrow_down{
     position: absolute;
     
-    width: 10px;
-    height: 10px;
+    width: 3px;
+    height: 3px;
     content: '';
     border: solid black;
     border-width: 0 1px 1px 0;
@@ -62,13 +56,13 @@
 }
 .arrow_up{
     top: 8px;
-    left: 8px;
+    left: 6px;
     transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 }
 .arrow_down{
     bottom: 8px;
-    left: 8px;
+    left: 6px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
@@ -126,7 +120,7 @@
 }
 /* select button start */
 .select-button{
-    padding: 8px 16px;
+    padding: 4px 16px;
     font-size: 16px;
     font-weight: 600;
     position: relative;
@@ -142,12 +136,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 8px 16px;
+    padding: 4px 16px;
     box-sizing: border-box;
     opacity: 0;
     color: white;
     transition: 0.35s ease;
     text-transform: uppercase;
+}
+.select-button:active{
+    transform: translateY(1px);
 }
 .select-button:before {
     content: "";
@@ -164,6 +161,7 @@
 }
 .select-button:hover span {
     opacity: 1;
+    cursor: pointer;
 }
 /* select button end */        
     
