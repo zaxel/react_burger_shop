@@ -378,3 +378,13 @@ body {
         flex: 0 0 100%;
     }
 }
+@media (max-width: 440px) {
+    .editor-form__main{
+        flex-direction: column;
+    
+    }
+    .editor-form__main input{
+        flex: 0 0 100%;
+    
+    }
+}
