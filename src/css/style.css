@@ -253,11 +253,11 @@ body {
     position: absolute;
     display: inline-block;
     right: 0;
-    top: -3px;
+    top: -1px;
     width: 100px;
     height: auto;
     color: white;
-    font-size: 36px;
+    font-size: 20px;
     font-weight: 700;
     text-shadow: 1px 1px 1px #000000;
 }

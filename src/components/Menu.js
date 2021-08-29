@@ -6,7 +6,7 @@ class Menu extends React.Component{
     render(){
         return(
             <div className='burger__menu menu'>
-                <Header/>
+                <Header {...this.props}/>
                 <Burger/>
             </div>
             

@@ -7,7 +7,7 @@ class App extends React.Component{
     render(){
         return(
             <div className='burger'>
-                <Menu/>
+                <Menu title='Hot Burgers Best'/>
                 <Orders/>
                 <MenuAdmin/>
             </div>
