@@ -13,12 +13,12 @@ class MenuForm extends React.Component{
                     <input type="number" name="burger_price" placeholder="Price"/>
                 </div>
                 <select name="burger_status">
-                    <option selected value="available">available</option>
-                    <option value="out_of_stock">out of stock</option>
+                    <option defaultValue="available">Available</option>
+                    <option value="out_of_stock">Out of stock</option>
                 </select>
                 <textarea name="burger_descr" placeholder="Enter burger description" rows="3"/>
-                <input type="text" name="burger_img" placeholder="image"/>
-                <button class="select-button">Add To Menu<span>Add To Menu</span></button>
+                <input type="text" name="burger_img" placeholder="Image"/>
+                <button className="select-button">Add To Menu<span>Add To Menu</span></button>
             </form>
         )
     }

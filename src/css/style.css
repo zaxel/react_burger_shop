@@ -216,7 +216,7 @@ body {
 }
 
 .burger__orders {
-    flex: 0 0 20%;
+    flex: 0 0 calc(20% - 16px); /*minus left and right margin*/
     background-color: #f3f2f3;
     margin: 0 8px;
 }
@@ -298,14 +298,22 @@ body {
     margin: 20px 8px;
 }
 /*order page end*/
+/*menuadmin start*/
 .editor__tittle{
     font-weight: 600;
     font-size: 32px;
     text-align: center;
     margin: 20px 8px;
 }
-/*order page end*/
-
+.editor__form{
+    margin: 0 14px 14px;
+}
+/* .editor__form :last-child{
+} */
+.editor__button{
+    margin: 14px 14px 30px 14px;
+}
+/*menuadmin end*/
 /*404 page start*/
 .notfound{
     padding: 20px;
@@ -319,6 +327,7 @@ body {
 /*404 page end*/
 
 /*form start*/
+
 .editor-form{
     border: 2px solid black;
     display: flex;
@@ -338,6 +347,7 @@ body {
     border-radius: 0px;
     padding: 8px 16px;
     outline: none;
+    background-color: white;
 }
 .editor-form__main{
     display: flex;

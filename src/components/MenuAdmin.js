@@ -6,7 +6,12 @@ class MenuAdmin extends React.Component{
         return(
             <div className='burger__editor editor'>
                 <h2 className='editor__tittle'>Edit Menu</h2>
-                <MenuForm/>
+                <div className='editor__forms'>
+                    <MenuForm/>
+                    <MenuForm/>
+                    <MenuForm/>
+                </div>
+                <button className="editor__button select-button">Load Burgers<span>Load Burgers</span></button>
             </div>
             
         )
