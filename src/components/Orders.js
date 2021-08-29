@@ -5,7 +5,7 @@ class Orders extends React.Component{
         return(
             <div className='burger__orders orders'>
                 <div className='order__tittle'>
-                    Your Orders
+                    Your Order
                 </div>
             </div>
             

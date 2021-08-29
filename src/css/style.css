@@ -318,6 +318,37 @@ body {
 }
 /*404 page end*/
 
+/*form start*/
+.editor-form{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.editor-form button{
+    padding: 8px 16px;
+}
+.editor-form button span{
+    padding: 8px 16px;
+}
+.editor-form input,
+.editor-form select,
+.editor-form textarea{
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 0px;
+    padding: 8px 16px;
+    outline: none;
+}
+.editor-form__main{
+    display: flex;
+
+}
+.editor-form__main input{
+    flex: 0 0 50%;
+
+}
+/*form end*/
+
 /*media*/
 @media (max-width: 1024px) {
     .burger {
