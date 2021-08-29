@@ -12,6 +12,7 @@ class MenuForm extends React.Component{
 
     createBurger = (e) => {
         e.preventDefault();
+        e.currentTarget.reset()
         const burger = {
             name: this.titleRef.current.value,
             price: parseFloat(this.priceRef.current.value),
@@ -19,7 +20,7 @@ class MenuForm extends React.Component{
             descr: this.descrRef.current.value,
             image: this.imageRef.current.value,
         }
-        console.log(burger)
+        this.props.addBurger(burger)
     }
     render(){
         return(
