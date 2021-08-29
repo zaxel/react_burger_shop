@@ -306,6 +306,18 @@ body {
 }
 /*order page end*/
 
+/*404 page start*/
+.notfound{
+    padding: 20px;
+    width: 100%;
+}
+.notfound h2{
+    text-align: center;
+    font-size: 38px;
+    font-weight: 900;
+}
+/*404 page end*/
+
 /*media*/
 @media (max-width: 1024px) {
     .burger {
