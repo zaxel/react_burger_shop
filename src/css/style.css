@@ -212,16 +212,19 @@ body {
 
 .burger__menu {
     flex: 0 0 50%;
+    background-color: #f3f2f3;
 }
 
 .burger__orders {
     flex: 0 0 20%;
+    background-color: #f3f2f3;
+    margin: 0 8px;
 }
 
 .burger__editor {
     flex: 0 0 30%;
+    background-color: #f3f2f3;
 }
-
 
 /*menu start*/
 
@@ -287,6 +290,21 @@ body {
 
 
 /*burger main page end*/
+/*order page start*/
+.order__tittle{
+    font-weight: 600;
+    font-size: 32px;
+    text-align: center;
+    margin: 20px 8px;
+}
+/*order page end*/
+.editor__tittle{
+    font-weight: 600;
+    font-size: 32px;
+    text-align: center;
+    margin: 20px 8px;
+}
+/*order page end*/
 
 /*media*/
 @media (max-width: 1024px) {
@@ -300,6 +318,7 @@ body {
     
     .burger__orders {
         flex: 0 0 100%;
+        margin: 8px 0;
     }
     
     .burger__editor {
