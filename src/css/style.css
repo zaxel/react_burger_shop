@@ -1,51 +1,62 @@
 @import './normalize.css';
-*{
+* {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-#root{
+#root {
     width: 100%;
     height: auto;
 }
-/* main page start*/
-.select-top{
+
+body {
+    margin: 0;
+}
+
+
+/* main select page start*/
+
+.select-top {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: space-between;
 }
-.select-top__header{
+
+.select-top__header {
     font-family: 'Londrina Outline', cursive;
     text-transform: uppercase;
     font-size: 28px;
     padding: 20px;
 }
-.select-top__header:hover{
+
+.select-top__header:hover {
     cursor: pointer;
 }
-.picker{
+
+.picker {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    
 }
+
 .picker__up,
-.picker__down{
+.picker__down {
     width: 25px;
     height: 20px;
     position: relative;
     border: none;
     background-color: inherit;
 }
-.picker__up{
+
+.picker__up {
     margin-bottom: 5px;
 }
+
 .arrow_up,
-.arrow_down{
+.arrow_down {
     position: absolute;
-    
     width: 3px;
     height: 3px;
     content: '';
@@ -54,72 +65,89 @@
     display: inline-block;
     padding: 5px;
 }
-.arrow_up{
+
+.arrow_up {
     top: 8px;
     left: 6px;
     transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
 }
-.arrow_down{
+
+.arrow_down {
     bottom: 8px;
     left: 6px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
-.rest{
+
+.rest {
     position: relative;
     width: 400px;
     height: auto;
     margin: 35vh auto auto;
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.28); 
-    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.28);
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.28);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.28);
 }
 
+
 /* select restaurant li start */
-.rest__select-bottom{
+
+.rest__select-bottom {
     /* display: none; */
     position: absolute;
     top: 72px;
     left: 20px;
 }
-.select-bottom{
+
+.select-bottom {
     width: 300px;
     height: auto;
     background-color: white;
     border: 2px solid black;
 }
+
 .select-bottom ul {
-    list-style: none; /* Remove default bullets */
+    list-style: none;
+    /* Remove default bullets */
     padding: 10px;
     margin: 0;
-  }
-.select-bottom ul li{
+}
+
+.select-bottom ul li {
     padding: 5px;
 }
+
 .select-bottom ul li::before {
-  background-color: red; 
-  display: inline-block; 
-  width: 6px;
-  height: 6px;
-  content: '';
-  margin: 2px 10px 2px 2px;
+    background-color: red;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    content: '';
+    margin: 2px 10px 2px 2px;
 }
-.select-bottom ul li:hover{
+
+.select-bottom ul li:hover {
     background-color: lightgrey;
     cursor: pointer;
 }
+
 .select-bottom ul li:active,
-.select-bottom ul li:active{
+.select-bottom ul li:active {
     transform: translateY(1px);
 }
+
+
 /* select restaurant li end */
 
-.rest__select-button{
+.rest__select-button {
     /* display: none; */
     margin: 0 0 20px 20px;
 }
+
+
 /* select button start */
-.select-button{
+
+.select-button {
     padding: 4px 16px;
     font-size: 16px;
     font-weight: 600;
@@ -130,6 +158,7 @@
     text-align: center;
     text-transform: uppercase;
 }
+
 .select-button span {
     position: absolute;
     top: 0;
@@ -143,9 +172,11 @@
     transition: 0.35s ease;
     text-transform: uppercase;
 }
-.select-button:active{
+
+.select-button:active {
     transform: translateY(1px);
 }
+
 .select-button:before {
     content: "";
     left: 0;
@@ -156,14 +187,122 @@
     background-color: black;
     transition: 0.5s ease;
 }
+
 .select-button:hover:before {
     width: 100%;
 }
+
 .select-button:hover span {
     opacity: 1;
     cursor: pointer;
 }
-/* select button end */        
-    
 
-/* main page end*/
+
+/* select button end */
+
+
+/* main select page end*/
+
+
+/*burger main page start*/
+
+.burger {
+    display: flex;
+}
+
+.burger__menu {
+    flex: 0 0 50%;
+}
+
+.burger__orders {
+    flex: 0 0 20%;
+}
+
+.burger__editor {
+    flex: 0 0 30%;
+}
+
+
+/*menu start*/
+
+.menu-header {
+    background: url(../img/main.jpg) center center no-repeat;
+    background-size: cover;
+    /* background-color: gray; */
+
+    padding: 40px;
+}
+
+.header-rating {
+    display: flex;
+    max-width: 150px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    background-color: yellow;
+    padding: 3px 10px;
+    font-weight: 900;
+    font-size: 16px;
+    position: relative;
+    margin-bottom: 36px;
+}
+
+.header-rating__stars {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: -3px;
+    width: 100px;
+    height: auto;
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.menu-header__line {
+    display: inline-block;
+    border-bottom: 1px solid #fff;
+    content: '';
+    width: 100%;
+    margin-bottom: 26px;
+}
+
+.menu-header__slogan {
+    color: #f5f5f5;
+    font-size: 58px;
+    text-shadow: 0px -2px 4px #fff, 0px -2px 10px #FF3, 0px -10px 20px         #F90, 0px -20px 40px #C33;
+    margin: 0 0 25px 0;
+}
+.menu-header__descr{
+    font-size: 34px;
+    color: white;
+    text-shadow: 1px 1px 1px #000000;
+    margin: 0;
+}
+.menu-header__descr span{
+    color: red;
+}
+
+/*menu end*/
+
+
+/*burger main page end*/
+
+/*media*/
+@media (max-width: 1024px) {
+    .burger {
+        flex-direction: column;
+    }
+    
+    .burger__menu {
+        flex: 0 0 100%;
+    }
+    
+    .burger__orders {
+        flex: 0 0 100%;
+    }
+    
+    .burger__editor {
+        flex: 0 0 100%;
+    }
+}
