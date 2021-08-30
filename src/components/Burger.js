@@ -1,7 +1,12 @@
 import React from "react";
 
 class Burger extends React.Component{
+
+
+
     render(){
+    const isAvailable = this.props.burger.status === 'available';
+
         return( 
             <div className='burger__container'>
                 <div className='burger__pic-cont'><img src={this.props.burger.image} alt="Burger"/></div>
@@ -14,9 +19,9 @@ class Burger extends React.Component{
                         <div className='descr-cont__descr'>{this.props.burger.descr}</div>
                     </div> 
                     <div className='descr-cont__button-cont'>
-                        <button className="select-button    descr-cont__bottom">Order Now<span>Order Now</span></button>
+                        <button className={`select-button descr-cont__bottom ${!isAvailable && 'disabled'}`} >Order Now<span>Order Now</span></button>
                     </div>
-                    <div className='descr-cont__banner'>
+                    <div className={`descr-cont__banner ${isAvailable && 'disabled'}`}>
                         out of stock
                     </div>
                 </div>
