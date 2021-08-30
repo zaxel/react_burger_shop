@@ -198,6 +198,7 @@ body {
 }
 
 
+
 /* select button end */
 
 
@@ -206,22 +207,22 @@ body {
 
 /*burger main page start*/
 
-.burger {
+.burgers {
     display: flex;
 }
 
-.burger__menu {
+.burgers__menu {
     flex: 0 0 50%;
     background-color: #f3f2f3;
 }
 
-.burger__orders {
+.burgers__orders {
     flex: 0 0 calc(20% - 16px); /*minus left and right margin*/
     background-color: #f3f2f3;
     margin: 0 8px;
 }
 
-.burger__editor {
+.burgers__editor {
     flex: 0 0 30%;
     background-color: #f3f2f3;
 }
@@ -358,24 +359,91 @@ body {
 
 }
 /*form end*/
+/*burger item start*/
+.burgers__list{
+    list-style-type: none;
+    margin: 0;
+    padding: 14px;
+}
+.burger__container{
+    padding: 14px;
+    background-color: white;
+    display: flex;
+}
+.burger__pic-cont{
+    width: 160px;
+    height: 160px;
+}
+.burger__pic-cont img{
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+}
+.descr-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.descr-cont__title-cont{
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.burger__descr-cont{
+    max-width: 100%;
+    margin-left: 14px;
+}
+.descr-cont__button-cont{
+    text-align: right;
+}
+.descr-cont__descr{
+    margin-bottom: 8px;
+}
+
+/*burger item end*/
 
 /*media*/
 @media (max-width: 1024px) {
-    .burger {
+    .burgers {
         flex-direction: column;
     }
     
-    .burger__menu {
+    .burgers__menu {
         flex: 0 0 100%;
     }
     
-    .burger__orders {
+    .burgers__orders {
         flex: 0 0 100%;
         margin: 8px 0;
     }
     
-    .burger__editor {
+    .burgers__editor {
         flex: 0 0 100%;
+    }
+}
+@media (max-width: 740px) {
+    .burger__container{
+        padding: 8px;
+    }
+    .burgers__list{
+        padding: 8px;
+    }
+    .burger__pic-cont{
+        width: 100px;
+        height: 100px;
+    }
+    .burger__pic-cont img{
+        display: block;
+        width: 100px;
+        height: 100px;
+    }
+    .descr-cont__title-cont{
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
     }
 }
 @media (max-width: 440px) {

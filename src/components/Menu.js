@@ -5,9 +5,11 @@ import Burger from "./Burger";
 class Menu extends React.Component{
     render(){
         return(
-            <div className='burger__menu menu'>
+            <div className='burgers__menu menu'>
                 <Header {...this.props}/>
-                <Burger/>
+                <ul className='burgers__list'>
+                    <Burger/>
+                </ul>
             </div>
             
         )

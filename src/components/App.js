@@ -17,17 +17,11 @@ class App extends React.Component{
         this.setState({burgers})
     }
     loadSamples = (burgers) => {
-        //making copy of state 
-        const burgers_samples = {...this.state.burgers};
-        
-        const samples = Object.assign(burgers_samples, burgers);
-        //add our burgers to state
-        console.log(samples)
-        this.setState({burgers: samples})
+        this.setState({burgers: burgers})
     }
     render(){
         return(
-            <div className='burger'>
+            <div className='burgers'>
                 <Menu title='Hot Burgers Best'/>
                 <Orders/>
                 <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples}/>

@@ -20,7 +20,7 @@ class MenuForm extends React.Component{
             descr: this.descrRef.current.value,
             image: this.imageRef.current.value,
         }
-        this.props.addBurger(burger)
+        this.props.addBurger(burger);
     }
     render(){
         return(
