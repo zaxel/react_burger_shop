@@ -11,6 +11,9 @@
 body {
     margin: 0;
 }
+.disabled{
+    display: none;
+}
 
 
 /* main select page start*/
@@ -369,6 +372,7 @@ body {
     padding: 14px;
 }
 .burger__container{
+    position: relative;
     padding: 14px;
     background-color: white;
     display: flex;
@@ -405,7 +409,17 @@ body {
 .descr-cont__descr{
     margin-bottom: 8px;
 }
-
+.descr-cont__banner{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    position: absolute;
+    font-size: 32px;
+    color: red;
+    border: 1px solid red;
+    padding: 8px 35px;
+    background-color: white;
+}
 /*burger item end*/
 
 /*media*/

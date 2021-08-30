@@ -16,7 +16,9 @@ class Burger extends React.Component{
                     <div className='descr-cont__button-cont'>
                         <button className="select-button    descr-cont__bottom">Order Now<span>Order Now</span></button>
                     </div>
-                    
+                    <div className='descr-cont__banner'>
+                        out of stock
+                    </div>
                 </div>
             </div>
         )
