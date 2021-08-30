@@ -12,16 +12,15 @@ class MenuForm extends React.Component{
 
     createBurger = (e) => {
         e.preventDefault();
-        e.currentTarget.reset()
-        console.log(this.priceRef.current.value)
         const burger = {
-            name: this.titleRef.current.value,
-            price: parseFloat(this.priceRef.current.value || 0),
+            name: this.titleRef.current.value || 'Burger',
+            price: parseFloat(this.priceRef.current.value || 100),
             status: this.statusRef.current.value,
-            descr: this.descrRef.current.value,
-            image: this.imageRef.current.value,
+            descr: this.descrRef.current.value || 'This is the best burger in whole universe.',
+            image: this.imageRef.current.value || '../images/burger6.jpg',
         }
         this.props.addBurger(burger);
+        e.currentTarget.reset()
     }
     render(){
         return(
@@ -37,8 +36,11 @@ class MenuForm extends React.Component{
                 <textarea ref={this.descrRef} name="burger_descr" placeholder="Enter burger description" rows="3"/>
                 <input ref={this.imageRef} type="text" name="burger_img" placeholder="Image"/>
                 <button className="select-button">Add To Menu<span>Add To Menu</span></button>
+        
             </form>
         )
+        
+
     }
 }
 
