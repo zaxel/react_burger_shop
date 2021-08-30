@@ -462,6 +462,11 @@ body {
         font-weight: 600;
         margin-bottom: 5px;
     }
+    .descr-cont__banner{
+        transform: translate(-50%, -50%) rotate(-15deg);
+        font-size: 26px;
+        padding: 6px 25px;
+    }
 }
 @media (max-width: 440px) {
     .editor-form__main{
