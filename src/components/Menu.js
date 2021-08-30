@@ -8,7 +8,9 @@ class Menu extends React.Component{
             <div className='burgers__menu menu'>
                 <Header {...this.props}/>
                 <ul className='burgers__list'>
-                    <Burger/>
+                    {Object.keys(this.props.burgers).map((el)=>{
+                        return <li key={el}><Burger burger={this.props.burgers[el]}/></li>;
+                    })}
                 </ul>
             </div>
             

@@ -22,7 +22,7 @@ class App extends React.Component{
     render(){
         return(
             <div className='burgers'>
-                <Menu title='Hot Burgers Best'/>
+                <Menu title='Hot Burgers Best' burgers={this.state.burgers}/>
                 <Orders/>
                 <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples}/>
             </div>

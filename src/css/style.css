@@ -360,6 +360,9 @@ body {
 }
 /*form end*/
 /*burger item start*/
+.burger{
+    margin-bottom: 8px;
+}
 .burgers__list{
     list-style-type: none;
     margin: 0;
@@ -393,7 +396,7 @@ body {
     margin-bottom: 10px;
 }
 .burger__descr-cont{
-    max-width: 100%;
+    width: 100%;
     margin-left: 14px;
 }
 .descr-cont__button-cont{
