@@ -25,7 +25,8 @@ class Orders extends React.Component{
                     Your Order 
                 </h2>
                 <ul className='orders__list-cont'>
-                    <h3 className='orders__list-noitem'>Please make your order</h3>
+                    {!keys.length && <h3 className='orders__list-noitem'>Please make your order</h3>}
+                    
                     
                     {keys.map((item)=>{
                         return <li key={item} className='orders__list-item'>{order[item]} x {burgers[item].name}</li>
