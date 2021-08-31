@@ -10,13 +10,16 @@ class Orders extends React.Component{
         const order = this.props.order;
         const keys = Object.keys(order);
 
-        
+        const isAvailable =(burger) => {
+            return burgers[burger].status === 'available';
+        }
 
         const total = keys.reduce((acc, item)=>{
-            if(burgers[item].status !== 'available')
+            if(isAvailable(item))
+            return acc + burgers[item].price * order[item];
+
             return acc
 
-            return acc + burgers[item].price * order[item];
         }, 0)
         
         return(
@@ -29,9 +32,15 @@ class Orders extends React.Component{
                     
                     
                     {keys.map((item)=>{
-                        return <li key={item} className='orders__list-item'>
-                            <div className='orders__list-info'>{order[item]} x {burgers[item].name}</div>
-                            <button className='orders__list-button select-button'>X<span>X</span></button>
+                        
+                        return <li key={item} className={`orders__list-item ${!isAvailable(item) ? 'orders__list-outofstock' : ''}`}>
+                            
+                        {!isAvailable(item) &&
+                            <h4 className='orders__outofstock-warning'>ouof stock temporary</h4> }
+                             
+                            <div className='orders__list-info'>{order[item]} x    {burgers[item].name}    &nbsp;&nbsp;&nbsp;&#163;{burgers[item].price} </div>
+                            {isAvailable(item) &&
+                                <button className='orders__list-button   select-button'>X<span>X</span></button> }
                         </li>
                     })}
                 </ul>
@@ -45,5 +54,7 @@ class Orders extends React.Component{
         )
     }
 }
-
+ 
 export default Orders;
+
+ 
