@@ -299,11 +299,31 @@ body {
 
 /*burger main page end*/
 /*order page start*/
-.order__tittle{
+.orders__tittle{
     font-weight: 600;
     font-size: 32px;
     text-align: center;
     margin: 20px 8px;
+}
+.orders__list-cont{
+    padding: 14px;
+}
+.orders__list-item{
+    border-bottom: 1px solid black;
+    margin-bottom: 8px;
+}
+.orders__list-noitem{
+    margin-bottom: 12px;
+}
+.orders__del-descr{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.orders__total-cont{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 8px;
 }
 /*order page end*/
 /*menuadmin start*/

@@ -28,7 +28,7 @@ class App extends React.Component{
         return(
             <div className='burgers'>
                 <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
-                <Orders/>
+                <Orders burgers={this.state.burgers} order={this.state.order}/>
                 <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples}/>
             </div>
         )
