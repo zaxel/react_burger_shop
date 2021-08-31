@@ -311,6 +311,8 @@ body {
 .orders__list-item{
     border-bottom: 1px solid black;
     margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
 }
 .orders__list-noitem{
     margin-bottom: 12px;
@@ -327,6 +329,14 @@ body {
 }
 .orders__list-cont{
     list-style: none;
+}
+.orders__list-button{
+    padding: 1px 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.orders__list-button span{
+    padding: 1px 8px;
 }
 /*order page end*/
 /*menuadmin start*/

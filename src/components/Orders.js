@@ -29,7 +29,10 @@ class Orders extends React.Component{
                     
                     
                     {keys.map((item)=>{
-                        return <li key={item} className='orders__list-item'>{order[item]} x {burgers[item].name}</li>
+                        return <li key={item} className='orders__list-item'>
+                            <div className='orders__list-info'>{order[item]} x {burgers[item].name}</div>
+                            <button className='orders__list-button select-button'>X<span>X</span></button>
+                        </li>
                     })}
                 </ul>
                 <div className='orders__total-cont'>
