@@ -29,7 +29,7 @@ class Landing extends React.Component {
             <div className='rest'>
                 <div className='rest__select-top select-top'>
                         
-                        <div onClick={this.displayList} className='select-top__header'>{this.state.title ? this.state.title : 'Select restaurant'}</div>
+                    <div onClick={this.displayList} className='select-top__header'>{this.state.title ? this.state.title : 'Select restaurant'}</div>
                     <div className='select-top__picker picker'>
                         <div className='picker__up'><i className="arrow_up"></i></div>
                         <div className='picker__down'><i className="arrow_down"></i></div>

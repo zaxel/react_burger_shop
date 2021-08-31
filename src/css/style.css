@@ -21,8 +21,7 @@ body {
 .select-top {
     width: 100%;
     height: auto;
-    display: flex;
-    justify-content: space-between;
+    position: relative;
 }
 
 .select-top__header {
@@ -35,7 +34,12 @@ body {
 .select-top__header:hover {
     cursor: pointer;
 }
-
+.select-top__picker{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
 .picker {
     display: flex;
     flex-direction: column;
