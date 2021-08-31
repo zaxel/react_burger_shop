@@ -325,6 +325,9 @@ body {
     border-bottom: 2px solid black;
     padding: 8px;
 }
+.orders__list-cont{
+    list-style: none;
+}
 /*order page end*/
 /*menuadmin start*/
 .editor__tittle{
