@@ -16,13 +16,18 @@ class App extends React.Component{
         //add our burgers to state
         this.setState({burgers})
     }
+    addOrder = (key) => {
+        const order = {...this.state.order};
+        order[key] = order[key] + 1 || 1;
+        this.setState({order});
+    }
     loadSamples = (burgers) => {
         this.setState({burgers: burgers})
     }
     render(){
         return(
             <div className='burgers'>
-                <Menu title='Hot Burgers Best' burgers={this.state.burgers}/>
+                <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
                 <Orders/>
                 <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples}/>
             </div>

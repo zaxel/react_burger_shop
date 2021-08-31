@@ -10,7 +10,7 @@ const sample_burgers = {
     burger2: {
         name: 'The Original',
         price: 180.00,
-        status: 'available',
+        status: 'out_of_stock',
         descr: 'american cheese, pickles, onion, mustard, ketchup',
         image: '../images/burger2.jpg',
     },
@@ -24,7 +24,7 @@ const sample_burgers = {
     burger4: {
         name: 'The Classic',
         price: 130.50,
-        status: 'available',
+        status: 'out_of_stock',
         descr: 'american cheese, pickles, lettuce, tomato, caramelized onions, Burger Shop secret dressing',
         image: '../images/burger4.jpg',
     },

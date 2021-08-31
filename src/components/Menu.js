@@ -9,7 +9,7 @@ class Menu extends React.Component{
                 <Header {...this.props}/>
                 <ul className='burgers__list'>
                     {Object.keys(this.props.burgers).map((el)=>{
-                        return <li className='burger' key={el}><Burger burger={this.props.burgers[el]}/></li>;
+                        return <li className='burger' key={el}><Burger burger={this.props.burgers[el]} index={el} addOrder={this.props.addOrder}/></li>;
                     })}
                 </ul>
             </div>
