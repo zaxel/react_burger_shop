@@ -40,7 +40,7 @@ class Orders extends React.Component{
                             <h4 className='orders__outofstock-warning'>ouof stock temporary</h4> }
                             <div className='orders__title-cont'>
                                 <div className='orders__list-info'>{order[item]} x {burgers[item].name} &nbsp;&nbsp;&nbsp;&#163;{burgers[item].price.toFixed(2)}</div>
-                                <button className='orders__list-button   select-button'>X<span>X</span></button> 
+                                <button onClick={()=>{this.props.removeOrder(item)}} className='orders__list-button   select-button'>X<span>X</span></button> 
                             </div>
                             
                         </li>

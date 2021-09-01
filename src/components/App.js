@@ -21,6 +21,11 @@ class App extends React.Component{
         order[key] = order[key] + 1 || 1;
         this.setState({order});
     }
+    removeOrder = (key) => {
+        const order = {...this.state.order};
+        order[key] > 1 ? order[key] -= 1 : delete order[key];
+        this.setState({order});
+    }
     loadSamples = (burgers) => {
         this.setState({burgers: burgers})
     }
@@ -28,7 +33,7 @@ class App extends React.Component{
         return(
             <div className='burgers'>
                 <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
-                <Orders burgers={this.state.burgers} order={this.state.order}/>
+                <Orders burgers={this.state.burgers} order={this.state.order} removeOrder={this.removeOrder}/>
                 <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples}/>
             </div>
         )
