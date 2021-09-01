@@ -1,4 +1,5 @@
 import React from "react";
+import Total from "./Total";
 
 
 class Orders extends React.Component{
@@ -37,17 +38,16 @@ class Orders extends React.Component{
                             
                         {!isAvailable(item) &&
                             <h4 className='orders__outofstock-warning'>ouof stock temporary</h4> }
-                             
-                            <div className='orders__list-info'>{order[item]} x    {burgers[item].name}    &nbsp;&nbsp;&nbsp;&#163;{burgers[item].price} </div>
-                            {isAvailable(item) &&
-                                <button className='orders__list-button   select-button'>X<span>X</span></button> }
+                            <div className='orders__title-cont'>
+                                <div className='orders__list-info'>{order[item]} x {burgers[item].name} &nbsp;&nbsp;&nbsp;&#163;{burgers[item].price.toFixed(2)}</div>
+                                <button className='orders__list-button   select-button'>X<span>X</span></button> 
+                            </div>
+                            
                         </li>
                     })}
                 </ul>
                 <div className='orders__total-cont'>
-                    <h3 className='orders__delivery'>Delivery: &#163; 120.00</h3>
-                    <div className='orders__del-descr'>spend another &#163; 55.00 to get discounted delivery for only &#163; 10.00</div>
-                    <h3 className='orders__total'>Total: &#163; {total}</h3>
+                    {total > 0 && <Total total={total}/>}
                 </div>
             </div>
             

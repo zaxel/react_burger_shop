@@ -12,7 +12,7 @@ class Burger extends React.Component{
                     <div className='descr-cont__top-cont'>
                         <div className='descr-cont__title-cont'>
                             <div className='descr-cont__title'>{this.props.burger.name}</div>
-                            <div className='descr-cont__price'>&#163; {this.props.burger.price}</div>    
+                            <div className='descr-cont__price'>&#163; {this.props.burger.price.toFixed(2)}</div>    
                         </div>
                         <div className='descr-cont__descr'>{this.props.burger.descr}</div>
                     </div> 
