@@ -13,21 +13,23 @@ class App extends React.Component{
         burgers: {},
         order: {},
     }
-
-
-
     componentDidMount(){
         const {params} = this.props.match;
+
+
+        const localStorageRef = localStorage.getItem(params.restaurantId);
+        if(localStorageRef){
+            this.setState({order: JSON.parse(localStorageRef)})
+        }
+       
         this.ref = base.syncState(`${params.restaurantId}/burgers`, {
             context: this,
             state: 'burgers'
           });
-
     }
 
     componentDidUpdate(){
-        const {params} = this.props.match;
-        localStorage.setItem(params.restaurantId, JSON.stringify(this.state.order))
+        this.setLocalStore();
         
     }
 
@@ -35,8 +37,10 @@ class App extends React.Component{
         base.removeBinding(this.ref);
     }
 
-
-
+    setLocalStore = () => {
+        const {params} = this.props.match;
+        localStorage.setItem(params.restaurantId, JSON.stringify(this.state.order))
+    }
     
     addBurger = (burger) => {
         //making copy of state 
@@ -55,6 +59,8 @@ class App extends React.Component{
         const order = {...this.state.order};
         order[key] > 1 ? order[key] -= 1 : delete order[key];
         this.setState({order});
+
+        this.setLocalStore();
     }
     loadSamples = (burgers) => {
         this.setState({burgers: burgers})
