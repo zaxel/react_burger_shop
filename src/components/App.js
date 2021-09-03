@@ -24,9 +24,17 @@ class App extends React.Component{
           });
 
     }
+
+    componentDidUpdate(){
+        const {params} = this.props.match;
+        localStorage.setItem(params.restaurantId, JSON.stringify(this.state.order))
+        
+    }
+
     componentWillUnmount(){
         base.removeBinding(this.ref);
     }
+
 
 
     
