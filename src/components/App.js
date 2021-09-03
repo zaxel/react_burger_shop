@@ -50,6 +50,14 @@ class App extends React.Component{
         //add our burgers to state
         this.setState({burgers})
     }
+    changeBurger = (burger, key) => {
+        //making copy of state 
+        const burgers = {...this.state.burgers};
+        //changing burger
+        burgers[key]=burger;
+        //add our burgers to state
+        this.setState({burgers})
+    }
     addOrder = (key) => {
         const order = {...this.state.order};
         order[key] = order[key] + 1 || 1;
@@ -70,7 +78,7 @@ class App extends React.Component{
             <div className='burgers'>
                 <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
                 <Orders burgers={this.state.burgers} order={this.state.order} removeOrder={this.removeOrder}/>
-                <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers}/>
+                <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers} changeBurger={this.changeBurger}/>
             </div>
         )
     }

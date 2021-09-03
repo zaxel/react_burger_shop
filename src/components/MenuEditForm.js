@@ -4,19 +4,29 @@ import React from 'react';
 
 class MenuEditorForm extends React.Component{
     
+    
+    changeHandler = (e) => {
+        const formData = {
+            ...this.props.burger
+        }
+        formData[e.currentTarget.name] = e.currentTarget.value;
+        this.props.changeBurger(formData, this.props.index);
+        // console.log(e.currentTarget.value);
+    }
     render(){
+        
         return(
             <form className='editor__form editor-form'>
                 <div className='editor-form__main'>
-                    <input type="text" name="burger_title" value={this.props.burger.name}/>
-                    <input type="number" step=".01" name="burger_price" value={this.props.burger.price}/>
+                    <input onChange={this.changeHandler} type="text" name="name" value={this.props.burger.name}/>
+                    <input onChange={this.changeHandler} type="number" step=".01" name="price" value={this.props.burger.price}/>
                 </div>
-                <select name="burger_status" value={this.props.burger.status}>
-                    <option value="status">available</option>
+                <select onChange={this.changeHandler} name="status" value={this.props.burger.status}>
+                    <option value="available">available</option>
                     <option value="out_of_stock">Out of stock</option>
                 </select>
-                <textarea name="burger_descr" rows="3" value={this.props.burger.descr}/>
-                <input type="text" name="burger_img" value={this.props.burger.image}/>
+                <textarea onChange={this.changeHandler} name="descr" rows="3" value={this.props.burger.descr}/>
+                <input onChange={this.changeHandler} type="text" name="image" value={this.props.burger.image}/>
         
             </form>
         )
