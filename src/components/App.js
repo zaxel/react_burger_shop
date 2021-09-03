@@ -70,7 +70,7 @@ class App extends React.Component{
             <div className='burgers'>
                 <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
                 <Orders burgers={this.state.burgers} order={this.state.order} removeOrder={this.removeOrder}/>
-                <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples}/>
+                <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers}/>
             </div>
         )
     }
