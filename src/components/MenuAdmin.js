@@ -11,7 +11,7 @@ class MenuAdmin extends React.Component{
                 <div className='editor__forms'>
                     <MenuForm {...this.props}/>
                 </div>
-                <button onClick={() => this.props.loadSamples(sample_burgers)} className="editor__button select-button">Load Burgers<span>Load Burgers</span></button>
+                <button onClick={() => this.props.loadSamples(sample_burgers)} className="editor__button select-button">Load Burgers Samples<span>Load Burgers Samples</span></button>
             </div>
             
         )

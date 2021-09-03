@@ -2,12 +2,37 @@ import React from "react";
 import Menu from "./Menu";
 import Orders from "./Orders";
 import MenuAdmin from "./MenuAdmin";
+import base from '../base';
+// import firebase from 'firebase/app';
+
+
+
 
 class App extends React.Component{
     state = {
         burgers: {},
         order: {},
     }
+
+
+
+    componentDidMount(){
+        this.ref = base.syncState(`${this.props.match.params.restaurantId}/burgers`, {
+            context: this,
+            state: 'burgers'
+          });
+
+
+        // base.syncState(`${this.props.match.params.restaurantId}/burgers`, {
+        //     context: this,
+        //     state: 'burgers',
+        //     asArray: false
+        //   });
+    }
+
+
+
+    
     addBurger = (burger) => {
         //making copy of state 
         const burgers = {...this.state.burgers};
