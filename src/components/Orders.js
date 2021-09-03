@@ -11,7 +11,7 @@ class Orders extends React.Component{
         const order = this.props.order;
         const keys = Object.keys(order);
 
-        if(Object.entries(burgers).length === 0) return null;
+        if(Object.entries(burgers).length === 0) return <div className='burgers__orders orders'><h2 className='orders__tittle'>Your Order </h2></div>;
 
 
         const isAvailable =(burger) => {
