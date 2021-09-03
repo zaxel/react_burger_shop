@@ -17,19 +17,16 @@ class App extends React.Component{
 
 
     componentDidMount(){
-        this.ref = base.syncState(`${this.props.match.params.restaurantId}/burgers`, {
+        const {params} = this.props.match;
+        this.ref = base.syncState(`${params.restaurantId}/burgers`, {
             context: this,
             state: 'burgers'
           });
 
-
-        // base.syncState(`${this.props.match.params.restaurantId}/burgers`, {
-        //     context: this,
-        //     state: 'burgers',
-        //     asArray: false
-        //   });
     }
-
+    componentWillUnmount(){
+        base.removeBinding(this.ref);
+    }
 
 
     

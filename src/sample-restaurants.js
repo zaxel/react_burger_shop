@@ -2,7 +2,7 @@
 const restaurants = [
     {
         title: 'Hot Burger Opernyi Teatr',
-        url: 'horburgerteatr-lviv-ua',
+        url: 'hotburgerteatr-lviv-ua',
         id: 1
     },
     {
