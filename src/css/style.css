@@ -477,6 +477,23 @@ body {
     background-color: white;
 }
 /*burger item end*/
+/*CSS Transition start*/
+    .edtr-enter{
+        transition: 5s;
+        background-color: pink;
+    }
+    .edtr-enter-active{
+        background-color: saddlebrown;
+    }
+    .edtr-exit{
+        transition: 5s;
+        background-color: yellow;
+    }
+    .edtr-exit{
+        transition: 5s;
+        background-color: gray;
+    }
+/*CSS Transition end*/
 
 /*media*/
 @media (max-width: 1024px) {
