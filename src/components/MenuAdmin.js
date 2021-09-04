@@ -11,7 +11,7 @@ class MenuAdmin extends React.Component{
                 <h2 className='editor__tittle'>Edit Menu</h2>
                 <div className='editor__forms'>
                 {Object.keys(this.props.burgers).map((key)=> {
-                    return <MenuEditorForm key={key} index={key} burger={this.props.burgers[key]} changeBurger={this.props.changeBurger}/>
+                    return <MenuEditorForm key={key} index={key} burger={this.props.burgers[key]} changeBurger={this.props.changeBurger} removeBurger={this.props.removeBurger}/>
                 })}
                     <MenuForm {...this.props}/>
                 </div>

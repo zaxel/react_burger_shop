@@ -50,6 +50,21 @@ class App extends React.Component{
         //add our burgers to state
         this.setState({burgers})
     }
+    removeBurger = (key) => {
+        //making copy of burgers state 
+        const burgers = {...this.state.burgers};
+        //delete burger
+        burgers[key] = null;
+        //add our burgers to state
+        this.setState({burgers})
+
+        //making copy of order state 
+        const order = {...this.state.order};
+        //if burger exist delete burger
+        order[key] && delete order[key] 
+        //add our order to state
+        this.setState({order});
+    }
     changeBurger = (burger, key) => {
         //making copy of state 
         const burgers = {...this.state.burgers};
@@ -78,7 +93,7 @@ class App extends React.Component{
             <div className='burgers'>
                 <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
                 <Orders burgers={this.state.burgers} order={this.state.order} removeOrder={this.removeOrder}/>
-                <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers} changeBurger={this.changeBurger}/>
+                <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers} changeBurger={this.changeBurger} removeBurger={this.removeBurger}/>
             </div>
         )
     }
