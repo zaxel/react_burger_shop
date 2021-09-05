@@ -15,7 +15,7 @@ class MenuEditorForm extends React.Component{
             <form onSubmit={(e)=>{e.preventDefault(); this.props.removeBurger(this.props.index)}} className='editor__form editor-form'>
                 <div className='editor-form__main'>
                     <input onChange={this.changeHandler} type="text" name="name" value={this.props.burger.name}/>
-                    <input onChange={this.changeHandler} type="number" step=".01" name="price" value={this.props.burger.price}/>
+                    <input onChange={this.changeHandler} type="number" step=".01" name="price" value={parseFloat(this.props.burger.price).toFixed(2)}/>
                 </div>
                 <select onChange={this.changeHandler} name="status" value={this.props.burger.status}>
                     <option value="available">available</option>
