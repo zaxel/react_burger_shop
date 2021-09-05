@@ -2,7 +2,7 @@ import React from "react";
 import MenuForm from "./MenuForm";
 import sample_burgers from "../sample-burgers";
 import MenuEditorForm from "./MenuEditForm";
-import { TransitionGroup, CSSTransition } from "react-transition-group"
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class MenuAdmin extends React.Component{
     
@@ -10,7 +10,6 @@ class MenuAdmin extends React.Component{
         return(
             <div className='burgers__editor editor'>
                 <h2 className='editor__tittle'>Edit Menu</h2>
-                {/* <div className='editor__forms'> */}
                     <TransitionGroup component='div' className="edtr">
                         {Object.keys(this.props.burgers).map((key)=> {
                             return(
@@ -20,8 +19,6 @@ class MenuAdmin extends React.Component{
                         })}
                     <MenuForm {...this.props}/>
                     </TransitionGroup>
-                
-                {/* </div> */}
                 <button onClick={() => this.props.loadSamples(sample_burgers)} className="editor__button select-button">Load Burgers Samples<span>Load Burgers Samples</span></button>
             </div>
             

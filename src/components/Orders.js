@@ -1,6 +1,6 @@
 import React from "react";
 import Total from "./Total";
-
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class Orders extends React.Component{
     
@@ -30,24 +30,25 @@ class Orders extends React.Component{
                 <h2 className='orders__tittle'>
                     Your Order 
                 </h2>
-                <ul className='orders__list-cont'>
-                    {!keys.length && <h3 className='orders__list-noitem'>Please make your order</h3>}
-                    
-                    
+                {!keys.length && <h3 className='orders__list-noitem'>Please make your order</h3>}
+                <TransitionGroup component='ul' className='orders__list-cont'>
                     {keys.map((item)=>{
-                        
-                        return <li key={item} className={`orders__list-item ${!isAvailable(item) ? 'orders__list-outofstock' : ''}`}>
-                            
-                        {!isAvailable(item) &&
-                            <h4 className='orders__outofstock-warning'>ouof stock temporary</h4> }
-                            <div className='orders__title-cont'>
-                                <div className='orders__list-info'>{order[item]} x {burgers[item].name} &nbsp;&nbsp;&nbsp;&#163;{burgers[item].price.toFixed(2)}</div>
-                                <button onClick={()=>{this.props.removeOrder(item)}} className='orders__list-button   select-button'>X<span>X</span></button> 
-                            </div>
-                            
-                        </li>
+                        return( 
+                            <CSSTransition classNames='orders__list-cont' key={item} timeout={{enter: 800, exit: 800}}>
+                                <li key={item} className={`orders__list-item ${!isAvailable(item) ? 'orders__list-outofstock' : ''}`}>
+
+                                {!isAvailable(item) &&
+                                    <h4 className='orders__outofstock-warning'>ouof stock temporary</h4> }
+                                    <div className='orders__title-cont'>
+                                        <div className='orders__list-info'>{order[item]} x {burgers[item].name} &nbsp;&nbsp;&nbsp;&#163;{burgers[item].price.toFixed(2)}</div>
+                                        <button onClick={()=>{this.props.removeOrder(item)}} className='orders__list-button   select-button'>X<span>X</span></button> 
+                                    </div>
+                                
+                                </li>
+                            </CSSTransition>
+                        )
                     })}
-                </ul>
+                </TransitionGroup>
                 <div className='orders__total-cont'>
                     {total > 0 && <Total total={total}/>}
                 </div>

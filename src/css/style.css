@@ -307,6 +307,7 @@ body {
     margin: 20px 8px;
 }
 .orders__list-cont{
+    overflow: hidden;
     list-style: none;
     margin: 0;
     padding: 14px 14px 6px;
@@ -318,6 +319,7 @@ body {
 }
 .orders__list-noitem{
     margin-bottom: 12px;
+    text-align: center;
 }
 .orders__del-descr{
     font-size: 14px;
@@ -480,16 +482,19 @@ body {
 /*burger item end*/
 /*CSS Transition start*/
     .edtr-enter,
-    .burgers__list-enter{
+    .burgers__list-enter,
+    .orders__list-cont-enter{
         transition: .8s;
         transform: translateX(-120%);
     }
     .edtr-enter-active,
-    .burgers__list-enter-active{
+    .burgers__list-enter-active,
+    .orders__list-cont-enter-active{
         transform: translateX(0);
     }
     .edtr-exit-active,
-    .burgers__list-exit-active{
+    .burgers__list-exit-active,
+    .orders__list-cont-exit-active{
         transition: .8s;
         transform: translateX(120%);
     }
