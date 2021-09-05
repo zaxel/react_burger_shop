@@ -232,6 +232,7 @@ body {
 .burgers__editor {
     flex: 0 0 30%;
     background-color: #f3f2f3;
+    overflow: hidden;
 }
 
 /*menu start*/
@@ -367,8 +368,7 @@ body {
 .editor__form{
     margin: 0 14px 14px;
 }
-/* .editor__form :last-child{
-} */
+
 .editor__button{
     margin: 14px 14px 30px 14px;
 }
@@ -479,20 +479,17 @@ body {
 /*burger item end*/
 /*CSS Transition start*/
     .edtr-enter{
-        transition: 5s;
-        background-color: pink;
+        transition: .8s;
+        transform: translateX(-120%);
     }
     .edtr-enter-active{
-        background-color: saddlebrown;
+        transform: translateX(0);
     }
-    .edtr-exit{
-        transition: 5s;
-        background-color: yellow;
+    .edtr-exit-active{
+        transition: .8s;
+        transform: translateX(120%);
     }
-    .edtr-exit{
-        transition: 5s;
-        background-color: gray;
-    }
+    
 /*CSS Transition end*/
 
 /*media*/
