@@ -417,7 +417,7 @@ body {
 }
 .editor-form__main input{
     flex: 0 0 50%;
-
+    width: 20px;
 }
 /*form end*/
 /*burger item start*/
