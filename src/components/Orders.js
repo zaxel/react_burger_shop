@@ -40,7 +40,15 @@ class Orders extends React.Component{
                                 {!isAvailable(item) &&
                                     <h4 className='orders__outofstock-warning'>ouof stock temporary</h4> }
                                     <div className='orders__title-cont'>
-                                        <div className='orders__list-info'>{order[item]} x {burgers[item].name} &nbsp;&nbsp;&nbsp;&#163;{burgers[item].price.toFixed(2)}</div>
+                                        <div className='orders__list-info'>
+                                            <TransitionGroup component='span' className='count'>
+                                                <CSSTransition classNames='count' key={order[item]} timeout={{enter: 500, exit: 500}}>
+                                                    <span>{order[item]}</span>
+                                                </CSSTransition>
+                                            </TransitionGroup>
+                                         
+                                        
+                                        <span> x {burgers[item].name} &nbsp;&nbsp;&nbsp;&#163;{parseFloat(burgers[item].price).toFixed(2)}</span></div>
                                         <button onClick={()=>{this.props.removeOrder(item)}} className='orders__list-button   select-button'>X<span>X</span></button> 
                                     </div>
                                 

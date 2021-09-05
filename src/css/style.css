@@ -349,6 +349,9 @@ body {
 .orders__list-outofstock .orders__list-info{
     text-decoration: line-through;
 }
+.orders__list-info{
+    position: relative;
+}
 .orders__list-button{
     height: 22px;
     min-width: 22px;
@@ -491,6 +494,7 @@ body {
     .burgers__list-enter-active,
     .orders__list-cont-enter-active{
         transform: translateX(0);
+        transition: .8s;
     }
     .edtr-exit-active,
     .burgers__list-exit-active,
@@ -499,6 +503,29 @@ body {
         transform: translateX(120%);
     }
     
+    .count-enter{
+        display: inline-block;
+        transform: translateY(70%);
+        transition: .5s;
+    }
+    .count-enter-active{
+        transform: translateY(0);
+
+    }
+    .count-exit{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        transform: translateY(0);
+        animation: fadeIn;
+        transition: .5s;
+    }
+    .count-exit-active{
+        transform: translateY(-70%);
+    }
 /*CSS Transition end*/
 
 /*media*/
