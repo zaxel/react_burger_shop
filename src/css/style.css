@@ -423,6 +423,7 @@ body {
     margin-bottom: 8px;
 }
 .burgers__list{
+    overflow: hidden;
     list-style-type: none;
     margin: 0;
     padding: 14px;
@@ -478,14 +479,17 @@ body {
 }
 /*burger item end*/
 /*CSS Transition start*/
-    .edtr-enter{
+    .edtr-enter,
+    .burgers__list-enter{
         transition: .8s;
         transform: translateX(-120%);
     }
-    .edtr-enter-active{
+    .edtr-enter-active,
+    .burgers__list-enter-active{
         transform: translateX(0);
     }
-    .edtr-exit-active{
+    .edtr-exit-active,
+    .burgers__list-exit-active{
         transition: .8s;
         transform: translateX(120%);
     }
