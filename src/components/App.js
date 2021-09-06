@@ -12,9 +12,11 @@ class App extends React.Component{
     state = {
         burgers: {},
         order: {},
+        scrollingDirection: {},
     }
     componentDidMount(){
         const {params} = this.props.match;
+        const scrollingDirection = {isScrolOrdrNumUp: true}
 
 
         const localStorageRef = localStorage.getItem(params.restaurantId);
@@ -26,11 +28,15 @@ class App extends React.Component{
             context: this,
             state: 'burgers'
           });
+
+
+        this.setState({scrollingDirection})
     }
 
     componentDidUpdate(){
-        this.setLocalStore();
         
+        this.setLocalStore();
+
     }
 
     componentWillUnmount(){
@@ -77,6 +83,8 @@ class App extends React.Component{
         const order = {...this.state.order};
         order[key] = order[key] + 1 || 1;
         this.setState({order});
+
+        this.changeScrollDirection(true);
     }
     removeOrder = (key) => {
         const order = {...this.state.order};
@@ -84,15 +92,22 @@ class App extends React.Component{
         this.setState({order});
 
         this.setLocalStore();
+
+        this.changeScrollDirection(false);
     }
     loadSamples = (burgers) => {
         this.setState({burgers: burgers})
+    }
+    changeScrollDirection = (isDirectionUp) => {
+        const scrollingDirection = {...this.state.scrollingDirection}
+        scrollingDirection['isScrolOrdrNumUp'] = isDirectionUp;
+        this.setState({scrollingDirection});
     }
     render(){
         return(
             <div className='burgers'>
                 <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
-                <Orders burgers={this.state.burgers} order={this.state.order} removeOrder={this.removeOrder}/>
+                <Orders burgers={this.state.burgers} order={this.state.order} scrollingDirection={this.state.scrollingDirection} removeOrder={this.removeOrder}/>
                 <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers} changeBurger={this.changeBurger} removeBurger={this.removeBurger}/>
             </div>
         )

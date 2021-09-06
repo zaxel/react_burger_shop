@@ -503,16 +503,16 @@ body {
         transform: translateX(120%);
     }
     
-    .count-enter{
+    .countUp-enter{
         display: inline-block;
         transform: translateY(70%);
         transition: .5s;
     }
-    .count-enter-active{
+    .countUp-enter-active{
         transform: translateY(0);
 
     }
-    .count-exit{
+    .countUp-exit{
         position: absolute;
         top: 0;
         left: 0;
@@ -523,8 +523,31 @@ body {
         animation: fadeIn;
         transition: .5s;
     }
-    .count-exit-active{
+    .countUp-exit-active{
         transform: translateY(-70%);
+    }
+    .countDown-enter{
+        display: inline-block;
+        transform: translateY(-70%);
+        transition: .5s;
+    }
+    .countDown-enter-active{
+        transform: translateY(0);
+
+    }
+    .countDown-exit{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        transform: translateY(0);
+        animation: fadeIn;
+        transition: .5s;
+    }
+    .countDown-exit-active{
+        transform: translateY(70%);
     }
 /*CSS Transition end*/
 

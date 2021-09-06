@@ -9,15 +9,16 @@ class Orders extends React.Component{
         
         const burgers = this.props.burgers;
         const order = this.props.order;
+        const { isScrolOrdrNumUp } = this.props.scrollingDirection;
         const keys = Object.keys(order);
-
+        // console.log(scrollingDirection)
         if(Object.entries(burgers).length === 0) return <div className='burgers__orders orders'><h2 className='orders__tittle'>Your Order </h2></div>;
 
 
         const isAvailable =(burger) => {
             return burgers[burger].status === 'available';
         }
-
+        
         const total = keys.reduce((acc, item)=>{
             if(isAvailable(item))
             return acc + burgers[item].price * order[item];
@@ -41,15 +42,15 @@ class Orders extends React.Component{
                                     <h4 className='orders__outofstock-warning'>ouof stock temporary</h4> }
                                     <div className='orders__title-cont'>
                                         <div className='orders__list-info'>
-                                            <TransitionGroup component='span' className='count'>
-                                                <CSSTransition classNames='count' key={order[item]} timeout={{enter: 500, exit: 500}}>
+                                            <TransitionGroup component='span' className={`${isScrolOrdrNumUp ? 'countUp' : 'countDown'}`}>
+                                                <CSSTransition classNames={`${isScrolOrdrNumUp ? 'countUp' : 'countDown'}`} key={order[item]} timeout={{enter: 500, exit: 500}}>
                                                     <span>{order[item]}</span>
                                                 </CSSTransition>
                                             </TransitionGroup>
                                          
                                         
                                         <span> x {burgers[item].name} &nbsp;&nbsp;&nbsp;&#163;{parseFloat(burgers[item].price).toFixed(2)}</span></div>
-                                        <button onClick={()=>{this.props.removeOrder(item)}} className='orders__list-button   select-button'>X<span>X</span></button> 
+                                        <button onClick={()=>this.props.removeOrder(item)} className='orders__list-button   select-button'>X<span>X</span></button> 
                                     </div>
                                 
                                 </li>
