@@ -503,9 +503,44 @@ body {
         transform: translateX(120%);
     }
     
+    .orders__number{
+        display: inline-block;
+        transform: translateY(0);
+        transition: 5s;
+
+    }
+    .orders__number-down{
+        display: inline-block;
+        transform: translateY(120%);
+    }
+    .orders__number-up{
+        display: inline-block;
+        transform: translateY(120%);
+    }
+
+    
+    .orders__transition{
+        display: inline-block;
+    }
+    .orders__transition-down{
+        display: inline-block;
+        transform: translateY(120%);
+        transition: 5s;
+    }
+    .orders__transition-up{
+        display: inline-block;
+        transform: translateY(-120%);
+        transition: 5s;
+    }
+
+
+    .none{
+        display: none
+    }
     .countUp-enter{
         display: inline-block;
-        transform: translateY(70%);
+        /* transform: translateY(70%); */
+        transform: translateY(-70%);
         transition: .5s;
     }
     .countUp-enter-active{
@@ -519,16 +554,18 @@ body {
         width: 100%;
         height: auto;
         display: inline-block;
-        transform: translateY(0);
+        /* transform: translateY(0); */
         animation: fadeIn;
         transition: .5s;
     }
     .countUp-exit-active{
-        transform: translateY(-70%);
+        /* transform: translateY(-70%); */
+        transform: translateY(70%);
     }
     .countDown-enter{
         display: inline-block;
-        transform: translateY(-70%);
+        transform: translateY(70%);
+        /* transform: translateY(-70%); */
         transition: .5s;
     }
     .countDown-enter-active{
@@ -547,8 +584,10 @@ body {
         transition: .5s;
     }
     .countDown-exit-active{
-        transform: translateY(70%);
+        transform: translateY(-70%);
+        /* transform: translateY(70%); */
     }
+    
 /*CSS Transition end*/
 
 /*media*/

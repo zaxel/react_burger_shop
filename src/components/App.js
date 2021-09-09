@@ -13,10 +13,12 @@ class App extends React.Component{
         burgers: {},
         order: {},
         scrollingDirection: {},
+        numberClasses: {},
     }
     componentDidMount(){
         const {params} = this.props.match;
         const scrollingDirection = {isScrolOrdrNumUp: true}
+        const numberClasses = {className: ''}
 
 
         const localStorageRef = localStorage.getItem(params.restaurantId);
@@ -31,6 +33,7 @@ class App extends React.Component{
 
 
         this.setState({scrollingDirection})
+        this.setState({numberClasses})
     }
 
     componentDidUpdate(){
@@ -85,6 +88,7 @@ class App extends React.Component{
         this.setState({order});
 
         this.changeScrollDirection(true);
+        this.changeNumberClasses('none');
     }
     removeOrder = (key) => {
         const order = {...this.state.order};
@@ -92,22 +96,38 @@ class App extends React.Component{
         this.setState({order});
 
         this.setLocalStore();
+        
 
         this.changeScrollDirection(false);
+        this.changeNumberClasses('countUp-enter');
     }
     loadSamples = (burgers) => {
         this.setState({burgers: burgers})
     }
+
+
     changeScrollDirection = (isDirectionUp) => {
         const scrollingDirection = {...this.state.scrollingDirection}
         scrollingDirection['isScrolOrdrNumUp'] = isDirectionUp;
         this.setState({scrollingDirection});
     }
+
+    changeNumberClasses = (className) => {
+        const numberClasses = {...this.state.numberClasses}
+        // numberClasses['className'] && delete numberClasses['className'] 
+        numberClasses['className'] = className;
+        this.setState({numberClasses});
+    }
+
+    
+
+
+
     render(){
         return(
             <div className='burgers'>
                 <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
-                <Orders burgers={this.state.burgers} order={this.state.order} scrollingDirection={this.state.scrollingDirection} removeOrder={this.removeOrder}/>
+                <Orders burgers={this.state.burgers} order={this.state.order} scrollingDirection={this.state.scrollingDirection} numberClasses={this.state.numberClasses} removeOrder={this.removeOrder}/>
                 <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers} changeBurger={this.changeBurger} removeBurger={this.removeBurger}/>
             </div>
         )
