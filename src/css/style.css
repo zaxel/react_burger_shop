@@ -506,16 +506,16 @@ body {
     .orders__number{
         display: inline-block;
         transform: translateY(0);
-        transition: 5s;
+        transition: 1s;
 
     }
     .orders__number-down{
         display: inline-block;
-        transform: translateY(120%);
+        transform: translateY(-80%);
     }
     .orders__number-up{
         display: inline-block;
-        transform: translateY(120%);
+        transform: translateY(80%);
     }
 
     
@@ -524,13 +524,13 @@ body {
     }
     .orders__transition-down{
         display: inline-block;
-        transform: translateY(120%);
-        transition: 5s;
+        transform: translateY(80%);
+        transition: 1s;
     }
     .orders__transition-up{
         display: inline-block;
-        transform: translateY(-120%);
-        transition: 5s;
+        transform: translateY(-80%);
+        transition: 1s;
     }
 
 

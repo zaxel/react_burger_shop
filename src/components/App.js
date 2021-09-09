@@ -18,7 +18,7 @@ class App extends React.Component{
     componentDidMount(){
         const {params} = this.props.match;
         const scrollingDirection = {isScrolOrdrNumUp: true}
-        const numberClasses = {className: ''}
+        const numberClasses = {className: '', transitionClass: ''}
 
 
         const localStorageRef = localStorage.getItem(params.restaurantId);
@@ -88,7 +88,7 @@ class App extends React.Component{
         this.setState({order});
 
         this.changeScrollDirection(true);
-        this.changeNumberClasses('none');
+        this.changeNumberClasses(true);
     }
     removeOrder = (key) => {
         const order = {...this.state.order};
@@ -99,7 +99,7 @@ class App extends React.Component{
         
 
         this.changeScrollDirection(false);
-        this.changeNumberClasses('countUp-enter');
+        this.changeNumberClasses(false);
     }
     loadSamples = (burgers) => {
         this.setState({burgers: burgers})
@@ -112,11 +112,20 @@ class App extends React.Component{
         this.setState({scrollingDirection});
     }
 
-    changeNumberClasses = (className) => {
+    changeNumberClasses = (addingOrder) => {
         const numberClasses = {...this.state.numberClasses}
-        // numberClasses['className'] && delete numberClasses['className'] 
-        numberClasses['className'] = className;
-        this.setState({numberClasses});
+
+        if(addingOrder){
+            numberClasses['className'] = 'orders__number-down';
+            this.setState({numberClasses});
+         } else {
+            numberClasses['className'] = 'orders__number-up';
+            this.setState({numberClasses});
+         }
+        setTimeout(()=>{
+            numberClasses['className'] = 'orders__number'
+            this.setState({numberClasses})
+        }, 0)
     }
 
     
