@@ -45,6 +45,15 @@ class Orders extends React.Component{
 
         }, 0)
 
+        const numberClassMaker = () => {
+            const numbClass = className || 'orders__number'
+            return numbClass;
+        }
+        const transitionClassMaker = () => {
+            const transClass = 'orders__transition-absolute ' + transitionClass || 'none'
+            return transClass;
+        }
+        
         
 
         return(
@@ -63,8 +72,8 @@ class Orders extends React.Component{
                                     <h4 className='orders__outofstock-warning'>ouof stock temporary</h4> }
                                     <div className='orders__title-cont'>
                                         <div className='orders__list-info'>
-                                            <span className={className || 'orders__number'}>{order[item]}</span>
-                                            <span className={'orders__transition-absolute ' + transitionClass || 'none'}>{isScrolOrdrNumUp ? order[item]-1 : order[item]+1}</span>
+                                            <span className={numberClassMaker()}>{order[item]}</span>
+                                            <span className={transitionClassMaker()}>{isScrolOrdrNumUp ? order[item]-1 : order[item]+1}</span>
                                         <span> x {burgers[item].name} &nbsp;&nbsp;&nbsp;&#163;{parseFloat(burgers[item].price).toFixed(2)}</span></div>
                                         <button onClick={()=>{this.props.removeOrder(item); this.setMoveUpCss()}} className='orders__list-button   select-button'>X<span>X</span></button> 
                                     </div>
