@@ -3,7 +3,10 @@ import Total from "./Total";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class Orders extends React.Component{
-   
+    setMoveUpCss = (item) => {
+        this.myClass = item;
+        console.log(this.myClass)
+   }
     render(){
         console.log('render')
         const burgers = this.props.burgers;

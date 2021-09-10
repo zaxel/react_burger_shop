@@ -18,9 +18,6 @@ class App extends React.Component{
     componentDidMount(){
         const {params} = this.props.match;
         const scrollingDirection = {isScrolOrdrNumUp: true}
-        const order = {}
-
-
         const localStorageRef = localStorage.getItem(params.restaurantId);
         // console.log({order: JSON.parse(localStorageRef)})
 
@@ -28,6 +25,7 @@ class App extends React.Component{
             console.log({order: JSON.parse(localStorageRef)})
 
             // this.setState({order: JSON.parse(localStorageRef)})
+            this.setState({order: JSON.parse(localStorageRef)})
         }
        
         this.ref = base.syncState(`${params.restaurantId}/burgers`, {
@@ -37,7 +35,6 @@ class App extends React.Component{
 
 
         this.setState({scrollingDirection})
-        this.setState({order})
     }
 
     componentDidUpdate(){
@@ -53,34 +50,19 @@ class App extends React.Component{
     setLocalStore = () => {
         const {params} = this.props.match;
         const {order} = this.state;
-        // let storeValue = {};
         const orderNames = Object.keys(order)
-        // const storeValue = this.state.order
 
-        let burger = 'myBurgerId';
-
-
-        if(!orderNames.length) return;
+        if(!orderNames.length) localStorage.setItem(params.restaurantId, {});
         
-        let storeVal = orderNames.reduce((acc, item, i)=>{
+        let storeValue = orderNames.reduce((acc, item, i)=>{
             return {...acc, [item]: {
                 amount: order[item]['amount'], 
                 className: order[item]['className'],
                 transitionClass: order[item]['transitionClass']
             }}
-            // acc.value += this.state.burgers[item];
-
         }, {})
-
-        // storeValue = {
-        //     [burger]: {
-        //     // amount: this.state.order['amount'],
-        //     className: 'my class',
-        //     transitionClass: 'my transition class'
-        //     }
-        // }
-        console.log(storeVal)
-        // localStorage.setItem(params.restaurantId, JSON.stringify(storeValue))
+        // if(!Object.keys(storeValue).length) return;
+        localStorage.setItem(params.restaurantId, JSON.stringify(storeValue));
     }
     
     addBurger = (burger) => {
@@ -129,7 +111,10 @@ class App extends React.Component{
     }
     removeOrder = (key) => {
         const order = {...this.state.order};
-        order[key] > 1 ? order[key] -= 1 : delete order[key];
+
+        order[key]?.['amount'] > 1 ? order[key]['amount'] -= 1 : delete order[key]; 
+
+        // order[key] > 1 ? order[key] -= 1 : delete order[key];
         this.setState({order});
 
         this.setLocalStore();
