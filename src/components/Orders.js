@@ -27,7 +27,7 @@ class Orders extends React.Component{
         const burgers = this.props.burgers;
         const order = this.props.order;
         const { isScrolOrdrNumUp } = this.props.scrollingDirection;
-        const { className } = this.props.numberClasses;
+        const { className, transitionClass } = this.props.numberClasses;
         const keys = Object.keys(order);
         
         if(Object.entries(burgers).length === 0) return <div className='burgers__orders orders'><h2 className='orders__tittle'>Your Order </h2></div>;
@@ -64,7 +64,7 @@ class Orders extends React.Component{
                                     <div className='orders__title-cont'>
                                         <div className='orders__list-info'>
                                             <span className={className || 'orders__number'}>{order[item]}</span>
-                                            <span className='orders__transition'>{isScrolOrdrNumUp ? order[item]-1 : order[item]+1}</span>
+                                            <span className={'orders__transition-absolute ' + transitionClass || 'none'}>{isScrolOrdrNumUp ? order[item]-1 : order[item]+1}</span>
                                         <span> x {burgers[item].name} &nbsp;&nbsp;&nbsp;&#163;{parseFloat(burgers[item].price).toFixed(2)}</span></div>
                                         <button onClick={()=>{this.props.removeOrder(item); this.setMoveUpCss()}} className='orders__list-button   select-button'>X<span>X</span></button> 
                                     </div>

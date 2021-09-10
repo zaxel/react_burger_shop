@@ -113,19 +113,61 @@ class App extends React.Component{
     }
 
     changeNumberClasses = (addingOrder) => {
-        const numberClasses = {...this.state.numberClasses}
+        let numberClasses = {...this.state.numberClasses}
+
+        numberClasses['transitionClass'] = 'orders__transition'
+        this.setState({numberClasses})
 
         if(addingOrder){
             numberClasses['className'] = 'orders__number-down';
             this.setState({numberClasses});
+            setTimeout(()=>{
+                numberClasses['transitionClass'] = 'orders__transition orders__transition-up'
+                this.setState({numberClasses})
+
+                setTimeout(()=>{
+                    numberClasses['transitionClass'] = 'none orders__transition'
+                    this.setState({numberClasses})
+                }, 800)
+
+            }, 0)
          } else {
             numberClasses['className'] = 'orders__number-up';
             this.setState({numberClasses});
+            setTimeout(()=>{
+                numberClasses['transitionClass'] = 'orders__transition orders__transition-down'
+                this.setState({numberClasses})
+
+                setTimeout(()=>{
+                    numberClasses['transitionClass'] = 'none orders__transition'
+                    this.setState({numberClasses})
+                }, 800)
+
+            }, 0)
          }
         setTimeout(()=>{
             numberClasses['className'] = 'orders__number'
             this.setState({numberClasses})
         }, 0)
+
+
+        // setTimeout(()=>{
+        //         let numberClasses = {...this.state.numberClasses}
+        //         numberClasses['transitionClass'] = 'orders__transition orders__transition-absolute'
+        //         this.setState({numberClasses})
+
+                
+        //         setTimeout(()=>{
+        //             let numberClasses = {...this.state.numberClasses}
+        //             numberClasses['transitionClass'] = 'none orders__transition-absolute'
+        //             this.setState({numberClasses})
+                    
+    
+    
+        //         }, 800)
+
+        //     }, 0)
+        
     }
 
     

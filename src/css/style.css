@@ -506,15 +506,15 @@ body {
     .orders__number{
         display: inline-block;
         transform: translateY(0);
-        transition: 1s;
+        transition: .8s;
 
     }
     .orders__number-down{
-        display: inline-block;
+        /* display: inline-block; */
         transform: translateY(-80%);
     }
     .orders__number-up{
-        display: inline-block;
+        /* display: inline-block; */
         transform: translateY(80%);
     }
 
@@ -522,20 +522,28 @@ body {
     .orders__transition{
         display: inline-block;
     }
+    .orders__transition-absolute{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
     .orders__transition-down{
-        display: inline-block;
-        transform: translateY(80%);
-        transition: 1s;
+        transform: translateY(-80%);
+        transition: .8s;
     }
     .orders__transition-up{
-        display: inline-block;
-        transform: translateY(-80%);
-        transition: 1s;
+        transform: translateY(80%);
+        transition: .8s;
     }
+
+
 
 
     .none{
-        display: none
+        display: none;
+        transition: .8s;
     }
     .countUp-enter{
         display: inline-block;
