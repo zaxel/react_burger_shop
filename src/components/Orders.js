@@ -4,30 +4,12 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class Orders extends React.Component{
    
-    constructor(){
-        super()
-        this.myClass = 'none'
-
-    }
-    
-    componentDidUpdate(){
-        console.log('updated')
-    }
-
-    setMoveUpCss = (item) => {
-        this.myClass = item;
-        console.log(this.myClass)
-   }
-
-
-
     render(){
-    // let timer = null;
         console.log('render')
         const burgers = this.props.burgers;
         const order = this.props.order;
         const { isScrolOrdrNumUp } = this.props.scrollingDirection;
-        const { className, transitionClass } = this.props.numberClasses;
+        // const { className, transitionClass } = order;
         const keys = Object.keys(order);
         
         if(Object.entries(burgers).length === 0) return <div className='burgers__orders orders'><h2 className='orders__tittle'>Your Order </h2></div>;
@@ -45,12 +27,13 @@ class Orders extends React.Component{
 
         }, 0)
 
-        const numberClassMaker = () => {
-            const numbClass = className || 'orders__number'
+        const numberClassMaker = (item) => {
+            // const numbClass = className || 'orders__number'
+            const numbClass = order[item]['className'] || 'orders__number'
             return numbClass;
         }
-        const transitionClassMaker = () => {
-            const transClass = 'orders__transition-absolute ' + transitionClass || 'none'
+        const transitionClassMaker = (item) => {
+            const transClass = order[item]['transitionClass'] ? 'orders__transition-absolute ' + order[item]['transitionClass'] : 'none'
             return transClass;
         }
         
@@ -72,8 +55,8 @@ class Orders extends React.Component{
                                     <h4 className='orders__outofstock-warning'>ouof stock temporary</h4> }
                                     <div className='orders__title-cont'>
                                         <div className='orders__list-info'>
-                                            <span className={numberClassMaker()}>{order[item]}</span>
-                                            <span className={transitionClassMaker()}>{isScrolOrdrNumUp ? order[item]-1 : order[item]+1}</span>
+                                            <span className={numberClassMaker(item)}>{order[item]['amount']}</span>
+                                            <span className={transitionClassMaker(item)}>{isScrolOrdrNumUp ? order[item]['amount']-1 : order[item]['amount']+1}</span>
                                         <span> x {burgers[item].name} &nbsp;&nbsp;&nbsp;&#163;{parseFloat(burgers[item].price).toFixed(2)}</span></div>
                                         <button onClick={()=>{this.props.removeOrder(item); this.setMoveUpCss()}} className='orders__list-button   select-button'>X<span>X</span></button> 
                                     </div>

@@ -13,17 +13,21 @@ class App extends React.Component{
         burgers: {},
         order: {},
         scrollingDirection: {},
-        numberClasses: {},
+        // numberClasses: {},
     }
     componentDidMount(){
         const {params} = this.props.match;
         const scrollingDirection = {isScrolOrdrNumUp: true}
-        const numberClasses = {className: '', transitionClass: ''}
+        const order = {}
 
 
         const localStorageRef = localStorage.getItem(params.restaurantId);
+        // console.log({order: JSON.parse(localStorageRef)})
+
         if(localStorageRef){
-            this.setState({order: JSON.parse(localStorageRef)})
+            console.log({order: JSON.parse(localStorageRef)})
+
+            // this.setState({order: JSON.parse(localStorageRef)})
         }
        
         this.ref = base.syncState(`${params.restaurantId}/burgers`, {
@@ -33,7 +37,7 @@ class App extends React.Component{
 
 
         this.setState({scrollingDirection})
-        this.setState({numberClasses})
+        this.setState({order})
     }
 
     componentDidUpdate(){
@@ -48,7 +52,35 @@ class App extends React.Component{
 
     setLocalStore = () => {
         const {params} = this.props.match;
-        localStorage.setItem(params.restaurantId, JSON.stringify(this.state.order))
+        const {order} = this.state;
+        // let storeValue = {};
+        const orderNames = Object.keys(order)
+        // const storeValue = this.state.order
+
+        let burger = 'myBurgerId';
+
+
+        if(!orderNames.length) return;
+        
+        let storeVal = orderNames.reduce((acc, item, i)=>{
+            return {...acc, [item]: {
+                amount: order[item]['amount'], 
+                className: order[item]['className'],
+                transitionClass: order[item]['transitionClass']
+            }}
+            // acc.value += this.state.burgers[item];
+
+        }, {})
+
+        // storeValue = {
+        //     [burger]: {
+        //     // amount: this.state.order['amount'],
+        //     className: 'my class',
+        //     transitionClass: 'my transition class'
+        //     }
+        // }
+        console.log(storeVal)
+        // localStorage.setItem(params.restaurantId, JSON.stringify(storeValue))
     }
     
     addBurger = (burger) => {
@@ -84,11 +116,16 @@ class App extends React.Component{
     }
     addOrder = (key) => {
         const order = {...this.state.order};
-        order[key] = order[key] + 1 || 1;
+        let amount = order[key]?.['amount'] + 1 || 1;
+        order[key] = {
+            amount: amount,
+            className: 'my class',
+            transitionClass: 'my transition class'
+         }
         this.setState({order});
 
         this.changeScrollDirection(true);
-        this.changeNumberClasses(true);
+        // this.changeNumberClasses(true);
     }
     removeOrder = (key) => {
         const order = {...this.state.order};
@@ -99,7 +136,7 @@ class App extends React.Component{
         
 
         this.changeScrollDirection(false);
-        this.changeNumberClasses(false);
+        // this.changeNumberClasses(false);
     }
     loadSamples = (burgers) => {
         this.setState({burgers: burgers})
@@ -150,24 +187,6 @@ class App extends React.Component{
             this.setState({numberClasses})
         }, 0)
 
-
-        // setTimeout(()=>{
-        //         let numberClasses = {...this.state.numberClasses}
-        //         numberClasses['transitionClass'] = 'orders__transition orders__transition-absolute'
-        //         this.setState({numberClasses})
-
-                
-        //         setTimeout(()=>{
-        //             let numberClasses = {...this.state.numberClasses}
-        //             numberClasses['transitionClass'] = 'none orders__transition-absolute'
-        //             this.setState({numberClasses})
-                    
-    
-    
-        //         }, 800)
-
-        //     }, 0)
-        
     }
 
     
