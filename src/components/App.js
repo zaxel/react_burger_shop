@@ -102,11 +102,19 @@ class App extends React.Component{
             this.changeScrollDirection(true);
             this.changeNumberClasses(key, true);
         });
+        this.setState({order}, ()=>{
+            this.changeScrollDirection(true);
+            this.changeNumberClasses(key, true);
+        });
     }
+
+
+
     removeOrder = (key) => {
         const order = {...this.state.order};
 
         order[key]?.['amount'] > 1 ? order[key]['amount'] -= 1 : delete order[key]; 
+
         this.setState({order}, ()=>{
             this.changeScrollDirection(false);
             this.changeNumberClasses(key, false);
@@ -123,9 +131,17 @@ class App extends React.Component{
         this.setState({scrollingDirection});
     }
 
+    
+
     changeNumberClasses = (key, addingOrder) => {
         const order = {...this.state.order}
         
+        const delay = (ms) => {
+            return new Promise((resolve, reject) => {
+              setTimeout(() => resolve(), ms);
+            });
+          }
+
         if(!order[key]) return;
         order[key]['transitionClass'] = 'orders__transition';
         this.setState({order});
@@ -133,35 +149,37 @@ class App extends React.Component{
         if(addingOrder){
             order[key]['className'] = 'orders__number-down';
             this.setState({order});
-            setTimeout(()=>{
-                order[key]['transitionClass'] = 'orders__transition orders__transition-up'
-                this.setState({order})
 
-                setTimeout(()=>{
-                    order[key]['transitionClass'] = 'none orders__transition'
-                    this.setState({order})
-                }, 800)
-
-            }, 0)
+            delay(0)
+                .then(()=>{
+                    order[key]['transitionClass'] = 'orders__transition orders__transition-up';
+                    this.setState({order});
+                })
+                .then(()=>{return delay(800)})
+                .then(()=>{
+                    order[key]['transitionClass'] = 'none orders__transition';
+                        this.setState({order});
+                    })
          } else {
             order[key]['className'] = 'orders__number-up';
             this.setState({order});
-            setTimeout(()=>{
-                order[key]['transitionClass'] = 'orders__transition orders__transition-down'
-                this.setState({order})
 
-                setTimeout(()=>{
-                    order[key]['transitionClass'] = 'none orders__transition'
-                    this.setState({order})
-                }, 800)
+            delay(0)
+                .then(()=>{
+                    order[key]['transitionClass'] = 'orders__transition orders__transition-down';
+                    this.setState({order});
+                })
+                .then(()=>{return delay(800)})
+                .then(()=>{
+                        order[key]['transitionClass'] = 'none orders__transition';
+                        this.setState({order});
+                    })
 
-            }, 0)
          }
         setTimeout(()=>{
             order[key]['className'] = 'orders__number'
             this.setState({order})
         }, 0)
-
     }
 
     
