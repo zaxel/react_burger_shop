@@ -52,9 +52,6 @@ class Orders extends React.Component{
                 : 'none'
             return transClass;
         }
-        
-        
-
         return(
             <div className='burgers__orders orders'>
                 <h2 className='orders__tittle'>

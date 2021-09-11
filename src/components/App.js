@@ -181,10 +181,11 @@ class App extends React.Component{
                     })
 
          }
-        setTimeout(()=>{
-            order[key]['className'] = 'orders__number'
-            this.setState({order})
-        }, 0)
+         delay(0)
+            .then(()=>{
+                order[key]['className'] = 'orders__number';
+                this.setState({order});
+            })
     }
 
     
