@@ -651,6 +651,6 @@ body {
     }
     .editor-form__main input{
         flex: 0 0 100%;
-    
+        width: 100%;
     }
 }
