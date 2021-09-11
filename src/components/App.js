@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"; 
 import Menu from "./Menu";
 import Orders from "./Orders";
 import MenuAdmin from "./MenuAdmin";
@@ -9,6 +10,10 @@ import base from '../base';
 
 
 class App extends React.Component{
+    static propTypes = {
+        match: PropTypes.object
+    }
+
     state = {
         burgers: {},
         order: {},
@@ -190,7 +195,7 @@ class App extends React.Component{
         return(
             <div className='burgers'>
                 <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
-                <Orders burgers={this.state.burgers} order={this.state.order} scrollingDirection={this.state.scrollingDirection} numberClasses={this.state.numberClasses} removeOrder={this.removeOrder}/>
+                <Orders burgers={this.state.burgers} order={this.state.order} scrollingDirection={this.state.scrollingDirection} removeOrder={this.removeOrder}/>
                 <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers} changeBurger={this.changeBurger} removeBurger={this.removeBurger}/>
             </div>
         )

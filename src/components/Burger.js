@@ -1,6 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types"; 
 
 class Burger extends React.Component{
+
+    static propTypes = {
+        addOrder: PropTypes.func,
+        index: PropTypes.string,
+        burger: PropTypes.shape({
+            image: PropTypes.string,
+            name: PropTypes.string,
+            price: PropTypes.number,
+            descr: PropTypes.string,
+            status: PropTypes.string,
+        })
+    }
    
     render(){
     const isAvailable = this.props.burger.status === 'available';

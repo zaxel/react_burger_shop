@@ -1,7 +1,18 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
 class MenuEditorForm extends React.Component{
-    
+    static propTypes = {
+        burger: PropTypes.shape({
+            name: PropTypes.string,
+            price: PropTypes.number,
+            status: PropTypes.string,
+            descr: PropTypes.string,
+            image: PropTypes.string,
+        }),
+        changeBurger: PropTypes.func,
+        index: PropTypes.string,
+    }
     changeHandler = (e) => {
         const formData = {
             ...this.props.burger

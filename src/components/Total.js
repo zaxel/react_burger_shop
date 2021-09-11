@@ -1,6 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class Total extends React.Component{
+    static propTypes = {
+        total: PropTypes.number,
+    }
     render(){
         const subTotal = this.props.total;
         let delivery = 50;

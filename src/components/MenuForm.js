@@ -1,8 +1,11 @@
-import React from 'react';
-
+import React from "react";
+import PropTypes from "prop-types";
 
 
 class MenuForm extends React.Component{
+    static propTypes = {
+        addBurger: PropTypes.func,
+    }
 
     titleRef = React.createRef();
     priceRef = React.createRef();

@@ -1,8 +1,17 @@
 import React from "react";
+import PropTypes, { bool } from "prop-types";
 import Total from "./Total";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class Orders extends React.Component{
+    static propTypes = {
+        burgers: PropTypes.object,
+        order: PropTypes.object,
+        scrollingDirection: PropTypes.shape({
+            isScrolOrdrNumUp: bool
+        }),
+        removeOrder: PropTypes.func,
+    }
     setMoveUpCss = (item) => {
         this.myClass = item;
    }

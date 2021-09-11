@@ -1,14 +1,22 @@
 import React from "react";
+import PropTypes from 'prop-types'; 
 import Header from "./Header";
 import Burger from "./Burger";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
+
 class Menu extends React.Component{
-    render(){
+
+    static propTypes = {
+        burgers: PropTypes.object,
+        addOrder: PropTypes.func,
+    }
+
+    
+        render(){
         return(
             <div className='burgers__menu menu'>
                 <Header {...this.props}/>
-                {/* <ul className='burgers__list'> */}
                 <TransitionGroup component="ul" className="burgers__list">
                     {Object.keys(this.props.burgers).map((el)=>{
                         return(
@@ -18,7 +26,6 @@ class Menu extends React.Component{
                         )
                     })}
                 </TransitionGroup>
-                {/* </ul> */}
             </div>
             
         )

@@ -1,10 +1,17 @@
 import React from "react";
+import PropTypes from "prop-types";
 import MenuForm from "./MenuForm";
 import sample_burgers from "../sample-burgers";
 import MenuEditorForm from "./MenuEditForm";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class MenuAdmin extends React.Component{
+    static propTypes = {
+        burgers: PropTypes.object,
+        loadSamples: PropTypes.func,
+        changeBurger: PropTypes.func,
+        removeBurger: PropTypes.func,
+    }
     
     render(){
         return(

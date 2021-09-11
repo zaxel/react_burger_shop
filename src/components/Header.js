@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Header = props => ( 
     <div className='menu__header menu-header'>
@@ -12,5 +13,8 @@ const Header = props => (
     </div>
 )
 
+Header.propTypes = {
+    title: PropTypes.string,
+}
 
 export default Header;
