@@ -7,7 +7,6 @@ class Orders extends React.Component{
         this.myClass = item;
    }
     render(){
-        console.log('render')
         const burgers = this.props.burgers;
         const order = this.props.order;
         const { isScrolOrdrNumUp } = this.props.scrollingDirection;
@@ -30,12 +29,18 @@ class Orders extends React.Component{
         }, 0)
 
         const numberClassMaker = (item) => {
-            // const numbClass = className || 'orders__number'
+            // making sure on first order adding no flying effect
+            if(order[item]['amount'] === 1 && isScrolOrdrNumUp) return 'orders__number';
+
             const numbClass = order[item]['className'] || 'orders__number'
             return numbClass;
         }
         const transitionClassMaker = (item) => {
-            const transClass = order[item]?.['transitionClass'] ? 'orders__transition-absolute ' + order[item]['transitionClass'] : 'none'
+            // making sure on first order adding no flying effect
+            if(order[item]['amount'] === 1 && isScrolOrdrNumUp) return 'none';
+            const transClass = order[item]?.['transitionClass'] 
+                ? 'orders__transition-absolute ' + order[item]['transitionClass'] 
+                : 'none'
             return transClass;
         }
         

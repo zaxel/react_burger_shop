@@ -30,8 +30,6 @@ class App extends React.Component{
             context: this,
             state: 'burgers'
           });
-
-
         this.setState({scrollingDirection})
     }
 
@@ -94,21 +92,16 @@ class App extends React.Component{
     }
     addOrder = (key) => {
         let order = {...this.state.order};
-        console.log(order[key]?.['amount'], 555)
         let amount = order[key]?.['amount'] + 1 || 1;
-        console.log(key)
         order[key] = {
             amount: amount,
             className: '',
             transitionClass: ''
          }
-         console.log(order, 666)
         this.setState({order}, ()=>{
             this.changeScrollDirection(true);
             this.changeNumberClasses(key, true);
         });
-        
-        
     }
     removeOrder = (key) => {
         const order = {...this.state.order};
@@ -134,8 +127,8 @@ class App extends React.Component{
         const order = {...this.state.order}
         
         if(!order[key]) return;
-        order[key]['transitionClass'] = 'orders__transition'
-        this.setState({order})
+        order[key]['transitionClass'] = 'orders__transition';
+        this.setState({order});
 
         if(addingOrder){
             order[key]['className'] = 'orders__number-down';
