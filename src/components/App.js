@@ -22,8 +22,6 @@ class App extends React.Component{
         // console.log({order: JSON.parse(localStorageRef)})
 
         if(localStorageRef){
-            console.log({order: JSON.parse(localStorageRef)})
-
             // this.setState({order: JSON.parse(localStorageRef)})
             this.setState({order: JSON.parse(localStorageRef)})
         }
@@ -38,9 +36,7 @@ class App extends React.Component{
     }
 
     componentDidUpdate(){
-        
         this.setLocalStore();
-
     }
 
     componentWillUnmount(){
@@ -97,31 +93,31 @@ class App extends React.Component{
         this.setState({burgers})
     }
     addOrder = (key) => {
-        const order = {...this.state.order};
+        let order = {...this.state.order};
+        console.log(order[key]?.['amount'], 555)
         let amount = order[key]?.['amount'] + 1 || 1;
+        console.log(key)
         order[key] = {
             amount: amount,
-            className: 'my class',
-            transitionClass: 'my transition class'
+            className: '',
+            transitionClass: ''
          }
-        this.setState({order});
-
-        this.changeScrollDirection(true);
-        // this.changeNumberClasses(true);
+         console.log(order, 666)
+        this.setState({order}, ()=>{
+            this.changeScrollDirection(true);
+            this.changeNumberClasses(key, true);
+        });
+        
+        
     }
     removeOrder = (key) => {
         const order = {...this.state.order};
 
         order[key]?.['amount'] > 1 ? order[key]['amount'] -= 1 : delete order[key]; 
-
-        // order[key] > 1 ? order[key] -= 1 : delete order[key];
-        this.setState({order});
-
-        this.setLocalStore();
-        
-
-        this.changeScrollDirection(false);
-        // this.changeNumberClasses(false);
+        this.setState({order}, ()=>{
+            this.changeScrollDirection(false);
+            this.changeNumberClasses(key, false);
+        });
     }
     loadSamples = (burgers) => {
         this.setState({burgers: burgers})
@@ -134,42 +130,43 @@ class App extends React.Component{
         this.setState({scrollingDirection});
     }
 
-    changeNumberClasses = (addingOrder) => {
-        let numberClasses = {...this.state.numberClasses}
-
-        numberClasses['transitionClass'] = 'orders__transition'
-        this.setState({numberClasses})
+    changeNumberClasses = (key, addingOrder) => {
+        const order = {...this.state.order}
+        
+        if(!order[key]) return;
+        order[key]['transitionClass'] = 'orders__transition'
+        this.setState({order})
 
         if(addingOrder){
-            numberClasses['className'] = 'orders__number-down';
-            this.setState({numberClasses});
+            order[key]['className'] = 'orders__number-down';
+            this.setState({order});
             setTimeout(()=>{
-                numberClasses['transitionClass'] = 'orders__transition orders__transition-up'
-                this.setState({numberClasses})
+                order[key]['transitionClass'] = 'orders__transition orders__transition-up'
+                this.setState({order})
 
                 setTimeout(()=>{
-                    numberClasses['transitionClass'] = 'none orders__transition'
-                    this.setState({numberClasses})
+                    order[key]['transitionClass'] = 'none orders__transition'
+                    this.setState({order})
                 }, 800)
 
             }, 0)
          } else {
-            numberClasses['className'] = 'orders__number-up';
-            this.setState({numberClasses});
+            order[key]['className'] = 'orders__number-up';
+            this.setState({order});
             setTimeout(()=>{
-                numberClasses['transitionClass'] = 'orders__transition orders__transition-down'
-                this.setState({numberClasses})
+                order[key]['transitionClass'] = 'orders__transition orders__transition-down'
+                this.setState({order})
 
                 setTimeout(()=>{
-                    numberClasses['transitionClass'] = 'none orders__transition'
-                    this.setState({numberClasses})
+                    order[key]['transitionClass'] = 'none orders__transition'
+                    this.setState({order})
                 }, 800)
 
             }, 0)
          }
         setTimeout(()=>{
-            numberClasses['className'] = 'orders__number'
-            this.setState({numberClasses})
+            order[key]['className'] = 'orders__number'
+            this.setState({order})
         }, 0)
 
     }

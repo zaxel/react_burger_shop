@@ -5,7 +5,6 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 class Orders extends React.Component{
     setMoveUpCss = (item) => {
         this.myClass = item;
-        console.log(this.myClass)
    }
     render(){
         console.log('render')
@@ -36,7 +35,7 @@ class Orders extends React.Component{
             return numbClass;
         }
         const transitionClassMaker = (item) => {
-            const transClass = order[item]['transitionClass'] ? 'orders__transition-absolute ' + order[item]['transitionClass'] : 'none'
+            const transClass = order[item]?.['transitionClass'] ? 'orders__transition-absolute ' + order[item]['transitionClass'] : 'none'
             return transClass;
         }
         
