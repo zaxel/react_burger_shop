@@ -17,7 +17,9 @@ class MenuEditorForm extends React.Component{
         const formData = {
             ...this.props.burger
         }
+        
         formData[e.currentTarget.name] = e.currentTarget.value;
+        if(e.currentTarget.name === 'price') formData[e.currentTarget.name] = parseFloat(e.currentTarget.value);
         this.props.changeBurger(formData, this.props.index);
     }
     

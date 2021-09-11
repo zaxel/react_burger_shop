@@ -18,7 +18,6 @@ class App extends React.Component{
         burgers: {},
         order: {},
         scrollingDirection: {},
-        // numberClasses: {},
     }
     componentDidMount(){
         const {params} = this.props.match;
@@ -99,7 +98,7 @@ class App extends React.Component{
         let order = {...this.state.order};
         let amount = order[key]?.['amount'] + 1 || 1;
         order[key] = {
-            amount: amount,
+            amount,
             className: '',
             transitionClass: ''
          }
@@ -187,10 +186,6 @@ class App extends React.Component{
                 this.setState({order});
             })
     }
-
-    
-
-
 
     render(){
         return(
