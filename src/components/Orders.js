@@ -22,7 +22,7 @@ class Orders extends React.Component{
         
         const total = keys.reduce((acc, item)=>{
             if(isAvailable(item))
-            return acc + burgers[item].price * order[item];
+            return acc + burgers[item].price * order[item]['amount'];
 
             return acc
 
