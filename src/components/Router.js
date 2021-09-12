@@ -6,10 +6,10 @@ import NotFound from './NotFound';
 
 const Router = () => {
     return(
-        <BrowserRouter>
+        <BrowserRouter  basename={'/noauthburger'}>
             <Switch>
-                <Route exact path='/' component={Landing}/>
-                <Route exact path='/restaurant/:restaurantId' component={App}/>
+                <Route exact path={`/`} component={Landing}/>
+                <Route exact path={`/restaurant/:restaurantId`} component={App}/>
                 <Route component={NotFound}/>
             </Switch>
         </BrowserRouter>
