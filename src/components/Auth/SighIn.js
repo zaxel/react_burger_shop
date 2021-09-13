@@ -9,7 +9,6 @@ class SighIn extends React.Component{
     }
     componentDidMount(){
         firebase.auth().onAuthStateChanged(user => {
-            console.log(Boolean(user))
             if(user){
                 this.authHandler({user})
             }
@@ -17,7 +16,6 @@ class SighIn extends React.Component{
     }
 
     authHandler = (authData) => {
-        console.log(authData);
         const {email} = authData.user;
         this.setState({user: email});
     }

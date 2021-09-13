@@ -571,6 +571,35 @@ body {
     margin-bottom: 3px;
 }
 /*Login end*/
+/*User Profile start*/
+.userprofile__container{
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.userprofile__photo{
+    width: 5vw;
+    height: 5vw;
+    position: relative;
+    margin-bottom: 8px;
+}
+.userprofile__photo img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: contain;
+}
+.userprofile__user-name{
+    margin-bottom: 8px;
+}
+.userprofile__user-email{
+    margin: 0;
+}
+/*User Profile end*/
 
 /*media*/
 @media (max-width: 1024px) {
@@ -639,6 +668,35 @@ body {
         font-size: 26px;
         padding: 6px 25px;
     }
+    /*User Profile start*/
+    .userprofile__container{
+        padding: 6px 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .userprofile__photo{
+        width: 18vw;
+        height: 18vw;
+        margin-bottom: 4px;
+    }
+    .userprofile__photo img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        object-fit: contain;
+    }
+    .userprofile__user-name{
+        margin-bottom: 4px;
+    }
+    .userprofile__user-email{
+        padding-bottom: 4px;
+    }
+    /*User Profile end*/
 }
 @media (max-width: 440px) {
     .editor-form__main{
