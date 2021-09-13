@@ -227,6 +227,7 @@ body {
     flex: 0 0 calc(20% - 16px); /*minus left and right margin*/
     background-color: #f3f2f3;
     margin: 0 8px;
+    position: relative;
 }
 
 .burgers__editor {
@@ -300,6 +301,13 @@ body {
 
 /*burger main page end*/
 /*order page start*/
+.orders__container{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
 .orders__tittle{
     font-weight: 600;
     font-size: 32px;
@@ -603,14 +611,36 @@ body {
     .burgers {
         flex-direction: column;
     }
-    
+    .orders__container{
+        position: static;
+        background-color: #f3f2f3;
+    }
+    .orders__tittle{
+        margin: 5px;
+        font-size: 27px;
+    }
+    .orders__list-cont{
+        padding: 3px 12px 3px 3px;
+    }
+    .orders__list-item {
+        margin-bottom: 3px;
+    }
+    .burgers__orders{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: #f3f2f3;
+    }
     .burgers__menu {
         flex: 0 0 100%;
     }
     
     .burgers__orders {
         flex: 0 0 100%;
-        margin: 8px 0;
+        padding: 8px 0;
+        z-index: 10;
     }
     
     .burgers__editor {
