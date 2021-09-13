@@ -546,65 +546,31 @@ body {
         transition: .8s;
     }
 
-
-
-
     .none{
         display: none;
         transition: .8s;
     }
-    .countUp-enter{
-        display: inline-block;
-        /* transform: translateY(70%); */
-        transform: translateY(-70%);
-        transition: .5s;
-    }
-    .countUp-enter-active{
-        transform: translateY(0);
-
-    }
-    .countUp-exit{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        display: inline-block;
-        /* transform: translateY(0); */
-        animation: fadeIn;
-        transition: .5s;
-    }
-    .countUp-exit-active{
-        /* transform: translateY(-70%); */
-        transform: translateY(70%);
-    }
-    .countDown-enter{
-        display: inline-block;
-        transform: translateY(70%);
-        /* transform: translateY(-70%); */
-        transition: .5s;
-    }
-    .countDown-enter-active{
-        transform: translateY(0);
-
-    }
-    .countDown-exit{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        display: inline-block;
-        transform: translateY(0);
-        animation: fadeIn;
-        transition: .5s;
-    }
-    .countDown-exit-active{
-        transform: translateY(-70%);
-        /* transform: translateY(70%); */
-    }
-    
+   
 /*CSS Transition end*/
+
+/*Login start*/
+.login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+.login__buttons{
+    display: flex;
+    flex-direction: column;
+}
+.login__button{
+    margin-bottom: 3px;
+}
+/*Login end*/
 
 /*media*/
 @media (max-width: 1024px) {

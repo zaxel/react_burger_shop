@@ -4,8 +4,7 @@ import Menu from "./Menu";
 import Orders from "./Orders";
 import MenuAdmin from "./MenuAdmin";
 import base from '../base';
-// import firebase from 'firebase/app';
-
+import SighIn from "./Auth/SighIn";
 
 
 
@@ -189,11 +188,13 @@ class App extends React.Component{
 
     render(){
         return(
-            <div className='burgers'>
-                <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
-                <Orders burgers={this.state.burgers} order={this.state.order} scrollingDirection={this.state.scrollingDirection} removeOrder={this.removeOrder}/>
-                <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers} changeBurger={this.changeBurger} removeBurger={this.removeBurger}/>
-            </div>
+            <SighIn>
+                <div className='burgers'>
+                    <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
+                    <Orders burgers={this.state.burgers} order={this.state.order} scrollingDirection={this.state.scrollingDirection} removeOrder={this.removeOrder}/>
+                    <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers} changeBurger={this.changeBurger} removeBurger={this.removeBurger}/>
+                </div>
+            </SighIn>
         )
     }
 }
