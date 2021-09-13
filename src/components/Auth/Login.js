@@ -7,7 +7,7 @@ const Login = (props) => {
             <h2 className='login__title'>Authorization</h2>
             <p className='login__descr'>Please log in using one of the following</p>
             <div className='login__buttons'>
-                <button className='select-button login__button'>Login with GItHub
+                <button onClick={()=>{props.authenticate()}} className='select-button login__button'>Login with GItHub
                     <span>Login with GItHub</span>
                 </button>
                 <button className='select-button login__button'>Login with Google
@@ -18,4 +18,7 @@ const Login = (props) => {
     )
 }
 
+Login.propTypes = {
+    authenticate: PropTypes.func.isRequired
+}
 export default Login;
