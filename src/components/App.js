@@ -5,6 +5,8 @@ import Orders from "./Orders";
 import MenuAdmin from "./MenuAdmin";
 import base from '../base';
 import SighIn from "./Auth/SighIn";
+import firebase from "firebase/app";
+
 
 
 
@@ -185,14 +187,32 @@ class App extends React.Component{
                 this.setState({order});
             })
     }
+    
+    handleLogout = async () => {
+        await firebase.auth().signOut();
+        window.location.reload();
+    }
 
     render(){
         return(
             <SighIn>
                 <div className='burgers'>
-                    <Menu title='Hot Burgers Best' burgers={this.state.burgers} addOrder={this.addOrder}/>
-                    <Orders burgers={this.state.burgers} order={this.state.order} scrollingDirection={this.state.scrollingDirection} removeOrder={this.removeOrder}/>
-                    <MenuAdmin addBurger={this.addBurger} loadSamples={this.loadSamples} burgers={this.state.burgers} changeBurger={this.changeBurger} removeBurger={this.removeBurger}/>
+                    <Menu 
+                        title='Hot Burgers Best' 
+                        burgers={this.state.burgers} 
+                        addOrder={this.addOrder}/>
+                    <Orders 
+                        burgers={this.state.burgers} 
+                        order={this.state.order} 
+                        scrollingDirection={this.state.scrollingDirection} 
+                        removeOrder={this.removeOrder}/>
+                    <MenuAdmin 
+                        addBurger={this.addBurger} 
+                        loadSamples={this.loadSamples} 
+                        burgers={this.state.burgers} 
+                        changeBurger={this.changeBurger} 
+                        removeBurger={this.removeBurger} 
+                        handleLogout={this.handleLogout}/>
                 </div>
             </SighIn>
         )

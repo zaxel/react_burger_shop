@@ -7,13 +7,13 @@ class UserProfile extends React.Component{
                 <div className='userprofile__container'>
                     <div className='userprofile__info-cont'>
                         <div className='userprofile__photo'>
-                            <img src='../../images/user_placeholder.png' alt='user photo'/>
+                            <img src='../../images/user_placeholder.png' alt='user'/>
                         </div>
                         <h3 className='userprofile__user-name'>zaxel</h3>
                         <h5 className='userprofile__user-email'>sae11.z.alex@gmail.com</h5>
                     </div>
                     <div className='userprofile__button-cont'>
-                        <button onClick={()=>{}} className='select-button userprofile__button'>Logout
+                        <button onClick={this.props.handleLogout} className='select-button userprofile__button'>Logout
                             <span>Logout</span>
                         </button>
                     </div>

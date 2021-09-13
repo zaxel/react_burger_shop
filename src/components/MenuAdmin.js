@@ -14,10 +14,11 @@ class MenuAdmin extends React.Component{
         removeBurger: PropTypes.func,
     }
     
+    
     render(){
         return(
             <div className='burgers__editor editor'>
-                <UserProfile/>
+                <UserProfile handleLogout={this.props.handleLogout}/>
                 <h2 className='editor__tittle'>Edit Menu</h2>
                     <TransitionGroup component='div' className="edtr">
                         {Object.keys(this.props.burgers).map((key)=> {
