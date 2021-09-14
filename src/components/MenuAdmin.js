@@ -12,6 +12,7 @@ class MenuAdmin extends React.Component{
         loadSamples: PropTypes.func,
         changeBurger: PropTypes.func,
         removeBurger: PropTypes.func,
+        handleLogout: PropTypes.func
     }
     
     

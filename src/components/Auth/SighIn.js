@@ -29,7 +29,9 @@ class SighIn extends React.Component{
     }
 
     render(){
-        if(!this.state.user) return <Login authenticate={this.authenticate}/>;
+        if(!this.state.user){
+            return <Login authenticate={this.authenticate}/>;
+        } 
         return this.props.children;
     }
 }
