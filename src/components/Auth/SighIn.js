@@ -20,8 +20,14 @@ class SighIn extends React.Component{
         this.setState({user: email});
     }
 
-    authenticate = () => {
-        const authProvider = new firebase.auth['GithubAuthProvider']();
+    authenticate = (service) => {
+        let authProvider = null;
+        if(service === 'github'){
+            authProvider = new firebase.auth['GithubAuthProvider']();
+        }
+        else if(service === 'google'){
+            authProvider = new firebase.auth['GoogleAuthProvider']();
+        }
         firebaseApp
             .auth()
             .signInWithPopup(authProvider)
