@@ -8,8 +8,6 @@ import SighIn from "./Auth/SighIn";
 import firebase from "firebase/app";
 
 
-
-
 class App extends React.Component{
     static propTypes = {
         match: PropTypes.object
@@ -20,18 +18,17 @@ class App extends React.Component{
         order: {},
         scrollingDirection: {},
     }
+    
     componentDidMount(){
-        const {params} = this.props.match;
+        const restaurantId = window.location.href.split('/')[5];
         const scrollingDirection = {isScrolOrdrNumUp: true}
-        const localStorageRef = localStorage.getItem(params.restaurantId);
-        // console.log({order: JSON.parse(localStorageRef)})
+        const localStorageRef = localStorage.getItem(restaurantId);
 
         if(localStorageRef){
-            // this.setState({order: JSON.parse(localStorageRef)})
             this.setState({order: JSON.parse(localStorageRef)})
         }
        
-        this.ref = base.syncState(`${params.restaurantId}/burgers`, {
+        this.ref = base.syncState(`${restaurantId}/burgers`, {
             context: this,
             state: 'burgers'
           });
@@ -39,6 +36,7 @@ class App extends React.Component{
     }
 
     componentDidUpdate(){
+
         this.setLocalStore();
     }
 
@@ -47,11 +45,11 @@ class App extends React.Component{
     }
 
     setLocalStore = () => {
-        const {params} = this.props.match;
         const {order} = this.state;
-        const orderNames = Object.keys(order)
+        const orderNames = Object.keys(order);
+        const restaurantId = window.location.href.split('/')[4];
 
-        if(!orderNames.length) localStorage.setItem(params.restaurantId, {});
+        if(!orderNames.length) localStorage.setItem(restaurantId, {});
         
         let storeValue = orderNames.reduce((acc, item, i)=>{
             return {...acc, [item]: {
@@ -60,8 +58,7 @@ class App extends React.Component{
                 transitionClass: order[item]['transitionClass']
             }}
         }, {})
-        // if(!Object.keys(storeValue).length) return;
-        localStorage.setItem(params.restaurantId, JSON.stringify(storeValue));
+        localStorage.setItem(restaurantId, JSON.stringify(storeValue));
     }
     
     addBurger = (burger) => {
@@ -72,6 +69,7 @@ class App extends React.Component{
         //add our burgers to state
         this.setState({burgers})
     }
+
     removeBurger = (key) => {
         //making copy of burgers state 
         const burgers = {...this.state.burgers};
@@ -79,7 +77,6 @@ class App extends React.Component{
         burgers[key] = null;
         //add our burgers to state
         this.setState({burgers})
-
         //making copy of order state 
         const order = {...this.state.order};
         //if burger exist delete burger
@@ -87,6 +84,7 @@ class App extends React.Component{
         //add our order to state
         this.setState({order});
     }
+
     changeBurger = (burger, key) => {
         //making copy of state 
         const burgers = {...this.state.burgers};
@@ -95,6 +93,7 @@ class App extends React.Component{
         //add our burgers to state
         this.setState({burgers})
     }
+
     addOrder = (key) => {
         let order = {...this.state.order};
         let amount = order[key]?.['amount'] + 1 || 1;
@@ -113,8 +112,6 @@ class App extends React.Component{
         });
     }
 
-
-
     removeOrder = (key) => {
         const order = {...this.state.order};
 
@@ -129,14 +126,11 @@ class App extends React.Component{
         this.setState({burgers: burgers})
     }
 
-
     changeScrollDirection = (isDirectionUp) => {
         const scrollingDirection = {...this.state.scrollingDirection}
         scrollingDirection['isScrolOrdrNumUp'] = isDirectionUp;
         this.setState({scrollingDirection});
     }
-
-    
 
     changeNumberClasses = (key, addingOrder) => {
         const order = {...this.state.order}

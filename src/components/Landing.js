@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import PropTypes from "prop-types"; 
 import restaurants from '../sample-restaurants';
+import { useNavigate } from 'react-router-dom';
 
 const Landing = (props) => {
+    const navigate = useNavigate();
     const [display, setDisplay] = useState(false);
     const [title, setTitle] = useState('');
     const [url, setUrl] = useState('');
@@ -17,7 +19,7 @@ const Landing = (props) => {
         setDisplay(false);
     }
     const visitRestaurant = () => {
-        props.history.push(`/restaurant/${url}`)
+        navigate(`/restaurant/${url}`)
     }
 
     return (
