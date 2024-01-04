@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/react_boorger_shop/static/css/main.35f52573.chunk.css",
-    "main.js": "/react_boorger_shop/static/js/main.ba06d473.chunk.js",
-    "main.js.map": "/react_boorger_shop/static/js/main.ba06d473.chunk.js.map",
+    "main.js": "/react_boorger_shop/static/js/main.2e7292f3.chunk.js",
+    "main.js.map": "/react_boorger_shop/static/js/main.2e7292f3.chunk.js.map",
     "runtime-main.js": "/react_boorger_shop/static/js/runtime-main.04cdf085.js",
     "runtime-main.js.map": "/react_boorger_shop/static/js/runtime-main.04cdf085.js.map",
-    "static/js/2.a2563fde.chunk.js": "/react_boorger_shop/static/js/2.a2563fde.chunk.js",
-    "static/js/2.a2563fde.chunk.js.map": "/react_boorger_shop/static/js/2.a2563fde.chunk.js.map",
+    "static/js/2.26ddfad0.chunk.js": "/react_boorger_shop/static/js/2.26ddfad0.chunk.js",
+    "static/js/2.26ddfad0.chunk.js.map": "/react_boorger_shop/static/js/2.26ddfad0.chunk.js.map",
     "index.html": "/react_boorger_shop/index.html",
-    "precache-manifest.8aa19aa006c1db35268cc7ce47df738c.js": "/react_boorger_shop/precache-manifest.8aa19aa006c1db35268cc7ce47df738c.js",
+    "precache-manifest.666c9db3607c3008601c20e38c4eecad.js": "/react_boorger_shop/precache-manifest.666c9db3607c3008601c20e38c4eecad.js",
     "service-worker.js": "/react_boorger_shop/service-worker.js",
     "static/css/main.35f52573.chunk.css.map": "/react_boorger_shop/static/css/main.35f52573.chunk.css.map",
     "static/media/style.css": "/react_boorger_shop/static/media/main.8be34c52.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.04cdf085.js",
-    "static/js/2.a2563fde.chunk.js",
+    "static/js/2.26ddfad0.chunk.js",
     "static/css/main.35f52573.chunk.css",
-    "static/js/main.ba06d473.chunk.js"
+    "static/js/main.2e7292f3.chunk.js"
   ]
 }
