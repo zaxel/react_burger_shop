@@ -1,2 +1,1 @@
-DEMO (with no login)        https://saelex.com/noauthburger
-DEMO (with login)           https://saelex.com/authburger
+DEMO (with login)           https://zaxel.github.io/react_burger_shop
