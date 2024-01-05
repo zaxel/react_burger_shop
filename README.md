@@ -1,28 +1,25 @@
 # Burger Shop
-this is a short and light application that simulate **`burger shop`** order system. written in **`react`**.<br/> 
-the app simulates three separate shops you can choose from while making order. all datas are stored in firebase db. so every time you logging back into your account you have all your burgers and orders from previous session.<br/>
-also there is few versions of the app, one of which allows you to **`login`** into your account by **`google`** or **`github`**.<br/> 
+This is a short and lightweight application that simulates a **`burger shop`** order system, written in **`React`**.<br/> 
+The app simulates three separate shops from which you can choose while making an order. All data is stored in Firebase DB, so every time you log back into your account, you have all your burgers and orders from the previous session.<br/>
+Additionally, there are a few versions of the app, one of which allows you to **`log`** into your account using **`google`** or **`github`**.<br/> 
 
  
-### you will find a lot of features here. some of which are:
-* three different shops you can choose where to by from;
-* three sections in each shop:
-    * burger menu that you can order items;
-    * your current orders manager. you can see here all your items ordered, amount, price, discount etc... you free to add/remove items in your order;
-    * burger shop menu editor. you can create items by adding title, description, price so on. all this you can also edit in already existed cards at any time;
-* some cool animations on item cards and in Order section;
-* all datas in those sections are synchronized with firebase. so making changes in one sections you change same data in two others;
-* social medias login; 
+### Features:
+* Three different shops from which you can choose where to buy.;
+* Three sections in each shop:
+    * Burger menu where you can order items.
+    * Your current orders manager where you can see all your ordered items, including amount, price, discount, etc. You are free to add/remove items in your order.
+    * Burger shop menu editor where you can create items by adding title, description, price, etc. You can also edit existing cards at any time.
+* Some cool animations on item cards and in the Order section.
+* All data in these sections is synchronized with Firebase, so making changes in one section affects the same data in the other two.
+* Social media OAuth login.; 
 * and many more;
 
 
 
 *************************************************
-### *** you are welcome to try it ***
 
-**`DEMO (with no login)`** ------ [https://saelex.com/noauthburger](https://saelex.com/noauthburger)
-
-**`DEMO (with login)`** --------- [https://saelex.com/authburger](https://saelex.com/authburger)
+**`DEMO (with no login)`** ------ [https://zaxel.github.io/react_burger_shop](https://zaxel.github.io/react_burger_shop/)
                         
 *************************************************
 
@@ -30,7 +27,7 @@ also there is few versions of the app, one of which allows you to **`login`** in
 ### libraries, hooks and other features in this project:
 
 - [x] react, css-modules, class components, functional components
-- [x] react-router-dom, route, browserrouter, switch
+- [x] react-router-dom, route, browserrouter, hashrouter, switch
 - [x] state, props, componentDidMount, componentDidUpdate, componentWillUnmount, useState
 - [x] rest API, axios, localStorage
 - [x] firebase, firebase-auth
