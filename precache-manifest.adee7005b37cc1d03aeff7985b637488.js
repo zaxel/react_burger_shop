@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "04e90f6e2f9998a8550f95905a78d941",
+    "revision": "871b610f507635e2b3f3f45e0ba7fa2a",
     "url": "/react_boorger_shop/index.html"
   },
   {
-    "revision": "8f9877f8ab0946e9faf0",
+    "revision": "14169087cc9ac3a2f637",
     "url": "/react_boorger_shop/static/css/main.d5738015.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react_boorger_shop/static/js/2.a2563fde.chunk.js"
   },
   {
-    "revision": "8f9877f8ab0946e9faf0",
-    "url": "/react_boorger_shop/static/js/main.d9a1c68a.chunk.js"
+    "revision": "14169087cc9ac3a2f637",
+    "url": "/react_boorger_shop/static/js/main.b4517556.chunk.js"
   },
   {
     "revision": "fa55dd6643fb5d298398",
