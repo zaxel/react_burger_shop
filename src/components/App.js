@@ -20,7 +20,7 @@ class App extends React.Component{
     }
     
     componentDidMount(){
-        const restaurantId = window.location.href.split('/')[5];
+        const restaurantId = window.location.href.split('/')[6];
         const scrollingDirection = {isScrolOrdrNumUp: true}
         const localStorageRef = localStorage.getItem(restaurantId);
 
@@ -47,7 +47,7 @@ class App extends React.Component{
     setLocalStore = () => {
         const {order} = this.state;
         const orderNames = Object.keys(order);
-        const restaurantId = window.location.href.split('/')[4];
+        const restaurantId = window.location.href.split('/')[6];
 
         if(!orderNames.length) localStorage.setItem(restaurantId, {});
         

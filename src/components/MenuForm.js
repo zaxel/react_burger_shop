@@ -20,7 +20,7 @@ class MenuForm extends React.Component{
             price: parseFloat(this.priceRef.current.value || 100),
             status: this.statusRef.current.value,
             descr: this.descrRef.current.value || 'This is the best burger in whole universe.',
-            image: this.imageRef.current.value || '../images/burger6.jpg',
+            image: this.imageRef.current.value || './images/burger6.jpg',
         }
         this.props.addBurger(burger);
         e.currentTarget.reset()

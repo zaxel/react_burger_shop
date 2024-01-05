@@ -2,7 +2,7 @@
   "name": "burger_store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zaxel.github.io/react_boorger_shop/",
+  "homepage": "https://zaxel.github.io/react_burger_shop/",
   "dependencies": {
     "firebase": "8.6.8",
     "prop-types": "^15.7.2",
