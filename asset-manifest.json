@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react_boorger_shop/static/css/main.d5738015.chunk.css",
-    "main.js": "/react_boorger_shop/static/js/main.214bee2a.chunk.js",
-    "main.js.map": "/react_boorger_shop/static/js/main.214bee2a.chunk.js.map",
+    "main.js": "/react_boorger_shop/static/js/main.4ab5403c.chunk.js",
+    "main.js.map": "/react_boorger_shop/static/js/main.4ab5403c.chunk.js.map",
     "runtime-main.js": "/react_boorger_shop/static/js/runtime-main.04cdf085.js",
     "runtime-main.js.map": "/react_boorger_shop/static/js/runtime-main.04cdf085.js.map",
     "static/js/2.b3aa9dee.chunk.js": "/react_boorger_shop/static/js/2.b3aa9dee.chunk.js",
     "static/js/2.b3aa9dee.chunk.js.map": "/react_boorger_shop/static/js/2.b3aa9dee.chunk.js.map",
     "index.html": "/react_boorger_shop/index.html",
-    "precache-manifest.926541aa531908879934577cbf680121.js": "/react_boorger_shop/precache-manifest.926541aa531908879934577cbf680121.js",
+    "precache-manifest.91b60d5a0540f4c94ba53c9e218bc75e.js": "/react_boorger_shop/precache-manifest.91b60d5a0540f4c94ba53c9e218bc75e.js",
     "service-worker.js": "/react_boorger_shop/service-worker.js",
     "static/css/main.d5738015.chunk.css.map": "/react_boorger_shop/static/css/main.d5738015.chunk.css.map",
     "static/media/style.css": "/react_boorger_shop/static/media/main.8be34c52.jpg"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.04cdf085.js",
     "static/js/2.b3aa9dee.chunk.js",
     "static/css/main.d5738015.chunk.css",
-    "static/js/main.214bee2a.chunk.js"
+    "static/js/main.4ab5403c.chunk.js"
   ]
 }
