@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/react_boorger_shop/static/css/main.d5738015.chunk.css",
-    "main.js": "/react_boorger_shop/static/js/main.4ab5403c.chunk.js",
-    "main.js.map": "/react_boorger_shop/static/js/main.4ab5403c.chunk.js.map",
-    "runtime-main.js": "/react_boorger_shop/static/js/runtime-main.04cdf085.js",
-    "runtime-main.js.map": "/react_boorger_shop/static/js/runtime-main.04cdf085.js.map",
-    "static/js/2.b3aa9dee.chunk.js": "/react_boorger_shop/static/js/2.b3aa9dee.chunk.js",
-    "static/js/2.b3aa9dee.chunk.js.map": "/react_boorger_shop/static/js/2.b3aa9dee.chunk.js.map",
-    "index.html": "/react_boorger_shop/index.html",
-    "precache-manifest.91b60d5a0540f4c94ba53c9e218bc75e.js": "/react_boorger_shop/precache-manifest.91b60d5a0540f4c94ba53c9e218bc75e.js",
-    "service-worker.js": "/react_boorger_shop/service-worker.js",
-    "static/css/main.d5738015.chunk.css.map": "/react_boorger_shop/static/css/main.d5738015.chunk.css.map",
-    "static/media/style.css": "/react_boorger_shop/static/media/main.8be34c52.jpg"
+    "main.css": "/react_burger_shop/static/css/main.c0512a52.chunk.css",
+    "main.js": "/react_burger_shop/static/js/main.4ab5403c.chunk.js",
+    "main.js.map": "/react_burger_shop/static/js/main.4ab5403c.chunk.js.map",
+    "runtime-main.js": "/react_burger_shop/static/js/runtime-main.28b1a68c.js",
+    "runtime-main.js.map": "/react_burger_shop/static/js/runtime-main.28b1a68c.js.map",
+    "static/js/2.1b8590b9.chunk.js": "/react_burger_shop/static/js/2.1b8590b9.chunk.js",
+    "static/js/2.1b8590b9.chunk.js.map": "/react_burger_shop/static/js/2.1b8590b9.chunk.js.map",
+    "index.html": "/react_burger_shop/index.html",
+    "precache-manifest.5fd75578738d550e644c1ffb10b67f4a.js": "/react_burger_shop/precache-manifest.5fd75578738d550e644c1ffb10b67f4a.js",
+    "service-worker.js": "/react_burger_shop/service-worker.js",
+    "static/css/main.c0512a52.chunk.css.map": "/react_burger_shop/static/css/main.c0512a52.chunk.css.map",
+    "static/media/style.css": "/react_burger_shop/static/media/main.8be34c52.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.04cdf085.js",
-    "static/js/2.b3aa9dee.chunk.js",
-    "static/css/main.d5738015.chunk.css",
+    "static/js/runtime-main.28b1a68c.js",
+    "static/js/2.1b8590b9.chunk.js",
+    "static/css/main.c0512a52.chunk.css",
     "static/js/main.4ab5403c.chunk.js"
   ]
 }
